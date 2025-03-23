@@ -132,7 +132,7 @@ section p {
     align-items: flex-start;
     gap: 15px; /* Ensures there's space between year and publication */
     text-align: left;
-    margin-left: 60px; /* 从 20px 增加到 40px */
+    margin-left: 40px; /* 从 20px 增加到 40px */
 }
 
 .publication-year h3 {
