@@ -110,7 +110,7 @@ section p {
     border-radius: 5px;
 }
 
-.publication p {
+.publication h3 {
     font-size: 1rem;
     color: #666;
     line-height: 1.6;
