@@ -138,8 +138,9 @@ section p {
 }
 
 .publication-year h3 {
-    width: 100px;
-    text-align: left;
+    width: 80px; /* Ensures uniform left alignment */
+    min-width: 80px;
+    text-align: right;
     padding-right: 10px;
 }
 
