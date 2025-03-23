@@ -118,6 +118,7 @@ section p {
     margin-bottom: 15px;
     text-align: left;
     text-shadow: none;
+    margin-left: 20px; /* Fixed margin from the left */
 }
 
 .publication p {
@@ -125,6 +126,7 @@ section p {
     color: #666;
     line-height: 1.8;
     max-width: 900px;
+    margin: 0 auto;
     text-align: left;
     margin-left: 20px; /* Fixed margin from the left */
 }
@@ -150,7 +152,6 @@ section p {
     text-align: left;
     padding-left: 10px;
 }
-
 /* Footer */
 footer {
     position: relative;
