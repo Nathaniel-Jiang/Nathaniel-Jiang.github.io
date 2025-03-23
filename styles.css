@@ -102,13 +102,13 @@ section p {
     margin: 0 auto;
 }
 
-/* Publications Section */
 .publication {
     margin-top: 20px;
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 5px;
     text-align: left; /* Ensures text alignment is left */
+    list-style: none; /* Ensures no numbering or bullet points in this section */
 }
 
 .publication h3 {
@@ -118,6 +118,7 @@ section p {
     max-width: 900px;
     margin: 0 auto;
     margin-bottom: 10px;
+    list-style: none; /* Ensure no numbering for this element */
 }
 
 .publication p {
