@@ -102,6 +102,7 @@ section p {
     margin: 0 auto;
 }
 
+/* Publication Section */
 .publication {
     margin-top: 20px;
     padding: 15px;
@@ -112,23 +113,21 @@ section p {
 }
 
 .publication h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #666;
     line-height: 1.6;
-    max-width: 900px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    list-style: none; /* Ensure no numbering for this element */
+    margin-bottom: 15px;
+    text-align: left; /* Ensures the year is aligned to the left */
+    font-weight: bold; /* Bold the year */
 }
 
 .publication p {
     font-size: 1rem;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.8; /* Adjusted line height for better spacing */
     max-width: 900px;
     margin: 0 auto;
 }
-
 
 /* Footer - Fixed at Bottom */
 footer {
