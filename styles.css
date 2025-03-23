@@ -109,7 +109,7 @@ section p {
     border-radius: 5px;
     text-align: left;
     list-style: none;
-    margin-left: 20px; /* Added fixed margin from the left */
+    margin-left: 30px; /* Added fixed margin from the left */
 }
 
 /* Ensure the year and text content are aligned properly */
@@ -135,7 +135,7 @@ section p {
     width: 100px; /* Ensure uniform left alignment for the year */
     min-width: 100px;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 /* If there are multiple h4 tags for sub-publications, ensure consistency */
