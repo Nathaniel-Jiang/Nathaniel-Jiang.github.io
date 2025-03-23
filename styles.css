@@ -123,7 +123,7 @@ section p {
     margin-left: 40px; /* Fixed margin from the left for consistency */
     word-wrap: break-word; /* 强制单词内换行 */
     white-space: normal;   /* 允许换行，默认值，可明确指定 */
-    max-width: 600px;      /* 限制标题宽度，与正文接近 */
+    max-width: 400px;      /* 限制标题宽度，与正文接近 */
 }
 
 /* Publication Year Alignment */
