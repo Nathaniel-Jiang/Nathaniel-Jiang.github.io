@@ -113,16 +113,17 @@ section p {
 }
 
 .publication h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem; /* Increased font size for better readability */
     color: #666;
-    line-height: 1.6;
+    line-height: 1.8; /* Improved line height for better readability */
     margin-bottom: 15px;
     text-align: left; /* Ensures the year is aligned to the left */
     font-weight: bold; /* Bold the year */
+    text-shadow: none; /* Removes any text shadow */
 }
 
 .publication p {
-    font-size: 1rem;
+    font-size: 1.1rem; /* Adjusted for better readability */
     color: #666;
     line-height: 1.8; /* Adjusted line height for better spacing */
     max-width: 900px;
