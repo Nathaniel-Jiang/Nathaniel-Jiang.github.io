@@ -151,10 +151,30 @@ section p {
 
 /* If there are multiple h4 tags for sub-publications, ensure consistency */
 .publication-year h4 {
-    width: 100px;
-    min-width: 100px;
-    text-align: left;
-    padding-left: 10px;
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design for Publications */
+@media (max-width: 768px) {
+    .publication-year {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .publication-year h3 {
+        width: auto;
+        text-align: left;
+    }
+
+    .publication-year h4 {
+        font-size: 1rem;
+    }
+
+    .publication p {
+        font-size: 1rem;
+    }
 }
 
 /* Footer */
