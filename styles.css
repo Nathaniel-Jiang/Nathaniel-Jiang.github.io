@@ -120,14 +120,14 @@ section p {
     margin-bottom: 15px;
     text-align: left;
     text-shadow: none;
-    margin-left: 20px; /* Fixed margin from the left for consistency */
+    margin-left: 30px; /* Fixed margin from the left for consistency */
 }
 
 /* Publication Year Alignment */
 .publication-year {
     display: flex;
     align-items: flex-start;
-    gap: 5px; /* Ensures there's space between year and publication */
+    gap: 10px; /* Ensures there's space between year and publication */
     text-align: left;
 }
 
