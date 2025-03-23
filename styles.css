@@ -167,7 +167,7 @@ section p {
 
     .publication-year h4 {
         max-width: 100%; /* Allow full width on smaller screens */
-        font-size: 1rem; /* Adjust font size for readability */
+        
     }
 
     .publication p {
