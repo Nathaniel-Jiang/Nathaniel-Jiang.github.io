@@ -1,8 +1,8 @@
 /* General Reset */
-body, h1, h2, p, a {
+body, h1, h2, h3, p, a {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif; /* Changed to Arial for modern web use */
+    font-family: 'Arial', sans-serif; /* Consistent with your modern choice */
 }
 
 /* Header Navigation (Fixed Top) */
@@ -31,23 +31,23 @@ header nav a {
     padding: 10px 20px;
     font-size: 1.2rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
 header nav a:hover {
     background-color: #fff; /* Hover effect */
-    color: #2575fc; /* Change text color on hover */
+    color: #2575fc; /* Blue text on hover */
 }
 
 /* Add space at the top of the content to avoid header overlap */
 main {
-    margin-top: 80px; /* Adjusted to fit larger header */
+    margin-top: 80px; /* Matches header height */
     padding: 20px;
 }
 
 /* Hero Section (About Me) */
 .hero {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Your existing gradient */
     color: #fff;
     padding: 50px;
     text-align: center;
@@ -58,16 +58,24 @@ main {
     align-items: center;
 }
 
-.hero h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    font-weight: bold; /* Added bold for emphasis */
+.hero h1 {
+    font-size: 3.5rem; /* Larger for emphasis, matching Bates’ prominence */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.hero h3 {
+    font-size: 1.5rem; /* Subtitle size */
+    font-weight: normal; /* Lighter weight for contrast */
+    margin-bottom: 20px;
+    color: #e0e0e0; /* Slightly off-white for subtlety */
 }
 
 .hero p {
-    font-size: 1.2rem;
-    max-width: 800px; /* Restrict text width for better readability */
+    font-size: 1.1rem; /* Slightly smaller for bio */
+    max-width: 800px; /* Restrict width for readability */
     margin: 0 auto;
+    line-height: 1.8; /* Spacious for better readability */
 }
 
 /* Section Styling */
@@ -83,14 +91,14 @@ section {
 section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #333; /* Slightly darker for better readability */
+    color: #333; /* Darker for readability */
 }
 
 section p {
     font-size: 1.2rem;
-    color: #666; /* Lighter color for body text */
-    line-height: 1.6; /* Improved line height for readability */
-    max-width: 900px; /* Restrict text width for better readability */
+    color: #666; /* Lighter body text */
+    line-height: 1.6; /* Improved readability */
+    max-width: 900px; /* Restrict width */
     margin: 0 auto;
 }
 
@@ -98,13 +106,13 @@ section p {
 .publication, .research {
     margin-top: 20px;
     padding: 15px;
-    background-color: #f9f9f9; /* Light background for content sections */
+    background-color: #f9f9f9; /* Light background */
     border-radius: 5px;
 }
 
 .publication h3, .research h3 {
     font-size: 1.5rem;
-    color: #2575fc; /* Blue color for section headings */
+    color: #2575fc; /* Blue for headings */
 }
 
 /* Footer */
@@ -130,8 +138,12 @@ footer {
         font-size: 1rem;
     }
 
-    .hero h2 {
-        font-size: 2.5rem;
+    .hero h1 {
+        font-size: 2.5rem; /* Adjusted for smaller screens */
+    }
+
+    .hero h3 {
+        font-size: 1.2rem;
     }
 
     .hero p {
