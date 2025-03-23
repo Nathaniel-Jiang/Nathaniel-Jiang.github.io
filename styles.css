@@ -123,17 +123,6 @@ section p {
     margin-left: 20px; /* Fixed margin from the left for consistency */
 }
 
-/* Adjust paragraph content */
-.publication p {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-    margin-left: 20px; /* Fixed margin from the left */
-}
-
 /* Publication Year Alignment */
 .publication-year {
     display: flex;
