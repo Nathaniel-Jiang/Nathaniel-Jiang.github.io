@@ -116,8 +116,7 @@ section p {
     color: #000;
     line-height: 1.8;
     margin-bottom: 15px;
-    text-align: left;
-    font-weight: bold;
+    text-align: left；
     text-shadow: none;
 }
 
@@ -127,6 +126,7 @@ section p {
     line-height: 1.8;
     max-width: 900px;
     margin: 0 auto;
+    text-align: left;
 }
 
 /* Publication Year Alignment */
@@ -134,11 +134,12 @@ section p {
     display: flex;
     align-items: flex-start;
     gap: 20px;
+    text-align: left;
 }
 
 .publication-year h3 {
     width: 100px;
-    text-align: right;
+    text-align: left;
     padding-right: 10px;
 }
 
@@ -150,7 +151,6 @@ footer {
     width: 100%;
     text-align: center;
     padding: 15px;
-    background-color: #333;
     color: #fff;
     z-index: 1000;
 }
