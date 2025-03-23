@@ -43,6 +43,7 @@ header nav a:hover {
 main {
     margin-top: 80px; /* Space for fixed header */
     padding: 20px;
+    min-height: calc(100vh - 140px); /* 确保内容区域占满剩余高度，留出 footer 空间 */
 }
 
 /* Hero Section (About Me) */
@@ -114,13 +115,17 @@ section p {
     color: #2575fc;
 }
 
-/* Footer */
+/* Footer - Fixed at Bottom */
 footer {
-    text-align: center;
-    padding: 20px;
+    position: fixed; /* 固定在页面底部 */
+    bottom: 0; /* 贴近底部 */
+    left: 0; /* 左对齐 */
+    width: 100%; /* 占满宽度 */
     background-color: #333;
     color: #fff;
-    width: 100%;
+    text-align: center;
+    padding: 10px; /* 减少内边距，使其更紧凑 */
+    z-index: 1000; /* 确保在内容之上 */
 }
 
 /* Responsive Design */
