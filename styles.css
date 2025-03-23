@@ -106,7 +106,6 @@ section p {
 .publication {
     margin-top: 20px;
     padding: 15px;
-    background-color: #f9f9f9;
     border-radius: 5px;
     text-align: left; /* Ensures text alignment is left */
     list-style: none; /* Ensures no numbering or bullet points in this section */
@@ -114,7 +113,7 @@ section p {
 
 .publication h3 {
     font-size: 1.2rem; /* Increased font size for better readability */
-    color: #666;
+    color: #000;
     line-height: 1.8; /* Improved line height for better readability */
     margin-bottom: 15px;
     text-align: left; /* Ensures the year is aligned to the left */
