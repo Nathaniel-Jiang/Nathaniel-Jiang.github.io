@@ -109,8 +109,10 @@ section p {
     border-radius: 5px;
     text-align: left;
     list-style: none;
+    margin-left: 20px; /* Added fixed margin from the left */
 }
 
+/* Ensure the year and text content are aligned properly */
 .publication h3, .publication h4 {
     font-size: 1.2rem;
     color: #000;
@@ -118,9 +120,10 @@ section p {
     margin-bottom: 15px;
     text-align: left;
     text-shadow: none;
-    margin-left: 20px; /* Fixed margin from the left */
+    margin-left: 20px; /* Fixed margin from the left for consistency */
 }
 
+/* Adjust paragraph content */
 .publication p {
     font-size: 1.1rem;
     color: #666;
@@ -135,23 +138,25 @@ section p {
 .publication-year {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: 20px; /* Ensures there's space between year and publication */
     text-align: left;
 }
 
 .publication-year h3 {
-    width: 80px; /* Ensures uniform left alignment */
-    min-width: 80px;
+    width: 100px; /* Ensure uniform left alignment for the year */
+    min-width: 100px;
     text-align: left;
     padding-left: 10px;
 }
 
+/* If there are multiple h4 tags for sub-publications, ensure consistency */
 .publication-year h4 {
-    width: 80px; /* Ensures uniform left alignment */
-    min-width: 80px;
+    width: 100px;
+    min-width: 100px;
     text-align: left;
     padding-left: 10px;
 }
+
 /* Footer */
 footer {
     position: relative;
