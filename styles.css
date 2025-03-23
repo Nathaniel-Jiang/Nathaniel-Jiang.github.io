@@ -129,6 +129,23 @@ section p {
     margin: 0 auto;
 }
 
+.publication-year {
+    display: flex;
+    align-items: flex-start;
+}
+
+.publication-year h3 {
+    width: 100px; /* Fixed width to separate it from content */
+}
+
+.publication h4 {
+    margin-bottom: 10px; /* More spacing */
+}
+
+.publication h3, .publication h4, .publication p {
+    text-shadow: none !important;
+}
+
 /* Footer - Fixed at Bottom */
 footer {
     position: fixed; /* 固定在页面底部 */
