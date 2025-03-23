@@ -2,7 +2,7 @@
 body, h1, h2, p, a {
     margin: 0;
     padding: 0;
-    font-family: 'Times New Roman', sans-serif;
+    font-family: 'Arial', sans-serif; /* Changed to Arial for modern web use */
 }
 
 /* Header Navigation (Fixed Top) */
@@ -14,7 +14,7 @@ header {
     background-color: #ADD8E6; /* Light Blue */
     color: #000;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 15px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000; /* Ensure the header is always on top */
 }
@@ -31,16 +31,17 @@ header nav a {
     padding: 10px 20px;
     font-size: 1.2rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
 }
 
 header nav a:hover {
     background-color: #fff; /* Hover effect */
+    color: #2575fc; /* Change text color on hover */
 }
 
 /* Add space at the top of the content to avoid header overlap */
 main {
-    margin-top: 60px; /* Space for the fixed header */
+    margin-top: 80px; /* Adjusted to fit larger header */
     padding: 20px;
 }
 
@@ -50,7 +51,7 @@ main {
     color: #fff;
     padding: 50px;
     text-align: center;
-    height: 100vh; /* Take full screen height */
+    height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,36 +61,92 @@ main {
 .hero h2 {
     font-size: 3rem;
     margin-bottom: 10px;
+    font-weight: bold; /* Added bold for emphasis */
 }
 
 .hero p {
     font-size: 1.2rem;
+    max-width: 800px; /* Restrict text width for better readability */
+    margin: 0 auto;
 }
 
 /* Section Styling */
 section {
-    height: 100vh; /* Each section takes full screen height */
-    padding: 20px;
+    padding: 60px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 }
 
 section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #333; /* Slightly darker for better readability */
 }
 
 section p {
     font-size: 1.2rem;
-    text-align: center;
+    color: #666; /* Lighter color for body text */
+    line-height: 1.6; /* Improved line height for readability */
+    max-width: 900px; /* Restrict text width for better readability */
+    margin: 0 auto;
+}
+
+/* Public & Research Sections */
+.publication, .research {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9; /* Light background for content sections */
+    border-radius: 5px;
+}
+
+.publication h3, .research h3 {
+    font-size: 1.5rem;
+    color: #2575fc; /* Blue color for section headings */
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     background-color: #333;
     color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start;
+    }
+
+    header nav a {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
 }
