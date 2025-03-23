@@ -121,8 +121,7 @@ footer {
     bottom: 0; /* 贴近底部 */
     left: 0; /* 左对齐 */
     width: 100%; /* 占满宽度 */
-    background-color: #333;
-    color: #fff;
+    color: #000;
     text-align: center;
     padding: 10px; /* 减少内边距，使其更紧凑 */
     z-index: 1000; /* 确保在内容之上 */
