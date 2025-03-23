@@ -11,7 +11,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #ADD8E6;
+    background-color: #ADD8E6; /* Light Blue */
     color: #000;
     font-weight: bold;
     padding: 10px 20px;
@@ -44,12 +44,17 @@ main {
     padding: 20px;
 }
 
-/* Hero Section */
+/* Hero Section (About Me) */
 .hero {
     background: linear-gradient(to right, #6a11cb, #2575fc);
     color: #fff;
     padding: 50px;
     text-align: center;
+    height: 100vh; /* Take full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero h2 {
@@ -63,12 +68,22 @@ main {
 
 /* Section Styling */
 section {
-    margin-bottom: 40px;
+    height: 100vh; /* Each section takes full screen height */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-/* Project and Publication Styling */
-.project1, .project2, .publication {
+section h2 {
+    font-size: 2.5rem;
     margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 /* Footer */
