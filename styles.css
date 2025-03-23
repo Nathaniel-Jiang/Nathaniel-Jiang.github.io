@@ -110,10 +110,15 @@ section p {
     border-radius: 5px;
 }
 
-.publication h3 {
-    font-size: 1.5rem;
-    color: #2575fc;
+.publication p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left; /* Added to align text to the left */
 }
+
 
 /* Footer - Fixed at Bottom */
 footer {
