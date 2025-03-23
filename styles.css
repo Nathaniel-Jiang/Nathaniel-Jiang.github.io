@@ -105,22 +105,22 @@ section p {
 /* Publication Section */
 .publication {
     margin-top: 25px;
-    padding: 15px;
+    padding: 20px;
     border-radius: 5px;
     text-align: left;
     list-style: none;
-    margin-left: 30px; /* Added fixed margin from the left */
+    margin-left: 40px; /* Added fixed margin from the left */
 }
 
 /* Ensure the year and text content are aligned properly */
 .publication h3, .publication h4 {
     font-size: 1.2rem;
     color: #000;
-    line-height: 1.8;
-    margin-bottom: 15px;
+    line-height: 2.0;
+    margin-bottom: 20px;
     text-align: left;
     text-shadow: none;
-    margin-left: 30px; /* Fixed margin from the left for consistency */
+    margin-left: 40px; /* Fixed margin from the left for consistency */
     word-wrap: break-word; /* 强制单词内换行 */
     white-space: normal;   /* 允许换行，默认值，可明确指定 */
     max-width: 600px;      /* 限制标题宽度，与正文接近 */
@@ -130,7 +130,7 @@ section p {
 .publication-year {
     display: flex;
     align-items: flex-start;
-    gap: 20px; /* Ensures there's space between year and publication */
+    gap: 15px; /* Ensures there's space between year and publication */
     text-align: left;
     margin-left: 60px; /* 从 20px 增加到 40px */
 }
@@ -139,7 +139,7 @@ section p {
     width: 100px; /* Ensure uniform left alignment for the year */
     min-width: 100px;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 /* If there are multiple h4 tags for sub-publications, ensure consistency */
