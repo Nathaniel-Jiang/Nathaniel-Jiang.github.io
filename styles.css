@@ -127,7 +127,7 @@ section p {
 .publication-year {
     display: flex;
     align-items: flex-start;
-    gap: 10px; /* Ensures there's space between year and publication */
+    gap: 5px; /* Ensures there's space between year and publication */
     text-align: left;
 }
 
