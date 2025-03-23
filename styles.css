@@ -104,8 +104,9 @@ section p {
 
 /* Publication Section */
 .publication {
-    margin-top: 20px;
+    margin-top: 25px; /* Increase spacing between entries */
     padding: 15px;
+    background-color: #f9f9f9; /* Light background for clarity */
     border-radius: 5px;
     text-align: left; /* Ensures text alignment is left */
     list-style: none; /* Ensures no numbering or bullet points in this section */
@@ -132,29 +133,37 @@ section p {
 .publication-year {
     display: flex;
     align-items: flex-start;
+    gap: 20px; /* Adds space between year and publication content */
 }
 
 .publication-year h3 {
-    width: 100px; /* Fixed width to separate it from content */
+    width: 80px; /* Reducing width for better layout */
+    text-align: left;
+    font-weight: bold;
 }
 
 .publication h4 {
-    margin-bottom: 10px; /* More spacing */
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px; /* More spacing for better readability */
 }
 
 .publication h3, .publication h4, .publication p {
     text-shadow: none !important;
+    color: #000; /* Ensuring all text is black for better readability */
 }
 
 /* Footer - Fixed at Bottom */
 footer {
-    position: fixed; /* 固定在页面底部 */
-    bottom: 0; /* 贴近底部 */
+    position: relative; /* Prevent footer from overlapping content */
+    margin-top: 40px; /* Space from last content section */
     left: 0; /* 左对齐 */
     width: 100%; /* 占满宽度 */
-    color: #000;
     text-align: center;
-    padding: 10px; /* 减少内边距，使其更紧凑 */
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
     z-index: 1000; /* 确保在内容之上 */
 }
 
