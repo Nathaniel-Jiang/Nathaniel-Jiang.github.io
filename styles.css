@@ -108,6 +108,7 @@ section p {
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 5px;
+    text-align: left; /* Ensures text alignment is left */
 }
 
 .publication h3 {
@@ -116,7 +117,15 @@ section p {
     line-height: 1.6;
     max-width: 900px;
     margin: 0 auto;
-    text-align: left; /* Added to align text to the left */
+    margin-bottom: 10px;
+}
+
+.publication p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 
