@@ -146,6 +146,13 @@ section p {
     padding-left: 10px;
 }
 
+.publication-year h4 {
+    width: 80px; /* Ensures uniform left alignment */
+    min-width: 80px;
+    text-align: left;
+    padding-left: 10px;
+}
+
 /* Footer */
 footer {
     position: relative;
