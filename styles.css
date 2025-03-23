@@ -35,7 +35,7 @@ header nav a {
 }
 
 header nav a:hover {
-    background-color: #444; /* Hover effect */
+    background-color: #fff; /* Hover effect */
 }
 
 /* Add space at the top of the content to avoid header overlap */
