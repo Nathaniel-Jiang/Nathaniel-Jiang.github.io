@@ -179,12 +179,12 @@ section p {
 .cv-iframe-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .cv-iframe-container iframe {
     width: 80%; /* Adjust the width as needed */
-    height: 600px; /* Adjust the height as needed */
+    height: 200px; /* Adjust the height as needed */
     border: none;
 }
 
