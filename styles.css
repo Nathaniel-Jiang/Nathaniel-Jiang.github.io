@@ -201,26 +201,37 @@ body.photograph-page main {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    align-items: center; /* Center children horizontally */
+    align-items: center;
     width: 100%;
 }
 
+/* Slideshow Group (container + description) */
+.slideshow-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Limit total width */
+}
+
 /* Add space above first slideshow */
-.slideshow-wrapper .slideshow-container:first-of-type {
+.slideshow-wrapper .slideshow-group:first-of-type {
     margin-top: 50px;
 }
 
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 100%;
-    margin: 0 auto 50px; /* Center horizontally with auto margins */
+    width: 65%; /* Allocate space for image */
+    max-width: 800px; /* Maximum image width */
+    margin: 0 0 50px 0;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    display: flex; /* Added to center contents */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex;
+    justify-content: center;
 }
 
 /* Navigation Dots */
@@ -253,26 +264,33 @@ body.photograph-page main {
 .slide {
     display: none;
     width: 100%;
-    text-align: center;
-    flex-shrink: 0; /* Prevent shrinking */
 }
 
 /* Make slide visible when active */
 .slide.active {
-    display: flex; /* Changed to flex for centering */
-    justify-content: center; /* Center image horizontally */
-    align-items: center; /* Center image vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Center images within slides */
 .slide img {
-    max-height: 80vh;
+    max-height: 70vh;
     width: auto;
-    max-width: 100%; /* Ensure it doesn't overflow container */
+    max-width: 100%;
     object-fit: contain;
     border-radius: 10px;
     display: block;
-    margin: 0 auto; /* Additional centering fallback */
+}
+
+/* Description */
+.description {
+    width: 35%; /* Allocate space for description */
+    max-width: 400px;
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;
 }
 
 /* Fade Animation */
@@ -283,6 +301,25 @@ body.photograph-page main {
 @keyframes fadeEffect {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slideshow-group {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .slideshow-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .description {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1rem;
+    }
 }
 
 
