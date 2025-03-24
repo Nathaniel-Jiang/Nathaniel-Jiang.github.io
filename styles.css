@@ -212,6 +212,11 @@ body.photograph-page main {
     width: 100%; /* Ensure full width */
 }
 
+/* Add space above the first slideshow container */
+.slideshow-wrapper .slideshow-container:first-of-type {
+    margin-top: 30px; /* Add 20px of space above the first container */
+}
+
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
