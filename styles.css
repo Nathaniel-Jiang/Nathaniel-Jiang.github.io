@@ -266,7 +266,7 @@ body.photograph-page main {
 
 /* Slides */
 .slide img {
-    max-height: 70vh; /* Set the maximum height to 100% of the viewport height */
+    max-height: 80vh; /* Set the maximum height to 100% of the viewport height */
     width: auto; /* Automatically adjust the width to maintain the aspect ratio */
     object-fit: contain; /* Ensure the image fits within the container without distortion */
     border-radius: 10px; /* Optional: Add rounded corners */
