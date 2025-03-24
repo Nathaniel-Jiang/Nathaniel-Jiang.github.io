@@ -160,7 +160,7 @@ body.publications-page main h4 {
 .publication-year h4 {
     font-size: 1.2rem;
     color: #000;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     max-width: 800px; /* Adjust the width as needed */
     word-wrap: break-word; /* Break long words if necessary */
     white-space: normal; /* Allow text to wrap to the next line */
@@ -187,6 +187,27 @@ body.publications-page main h4 {
     .publication p {
         font-size: 1rem;
     }
+}
+
+/* Photo Gallery Styling */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between photos */
+    padding: 20px;
+    justify-items: center; /* Center photos horizontally */
+}
+
+.photo-gallery img {
+    width: 100%; /* Make photos responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Adjust spacing for <h2> and <p> in cv.html */
