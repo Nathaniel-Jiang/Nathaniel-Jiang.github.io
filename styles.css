@@ -192,7 +192,7 @@ body.publications-page main h4 {
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 90%; /* Increase width to 90% */
+    max-width: 1000%; /* Increase width to 90% */
     margin: auto;
     overflow: hidden;
     background-color: #f9f9f9;
@@ -227,7 +227,7 @@ body.publications-page main h4 {
 .slideshow-container img {
     width: 100%; /* Make images responsive */
     height: auto; /* Maintain aspect ratio */
-    max-height: 600px; /* Increase max height for larger display */
+    max-height: 700px; /* Increase max height for larger display */
     border-radius: 10px; /* Optional: Add rounded corners */
 }
 
