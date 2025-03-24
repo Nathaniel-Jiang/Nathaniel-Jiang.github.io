@@ -192,7 +192,7 @@ body.publications-page main h4 {
 /* Adjust spacing for <h2> in photograph.html */
 body.photograph-page main h2 {
     margin: 0 !important; /* Reset all margins */
-    margin-top: 100px !important; /* Add the desired space above the <h2> */
+    margin-top: 80px !important; /* Add the desired space above the <h2> */
 }
 
 /* Reset parent container spacing */
