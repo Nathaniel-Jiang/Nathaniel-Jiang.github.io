@@ -9,11 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Slideshow class with external description handling
     class Slideshow {
-        constructor(container, descriptionElement) {
+        constructor(container, descriptionElement, allSlideshows) {
             this.container = container;
             this.descriptionElement = descriptionElement;
             this.slidesData = JSON.parse(container.dataset.slides);
             this.currentIndex = 0;
+            this.allSlideshows = allSlideshows; // Reference to all slideshows
             this.init();
         }
 
@@ -54,17 +55,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 dot.addEventListener('click', () => {
                     this.currentIndex = parseInt(dot.dataset.slide);
                     this.showSlide();
+                    this.resetOtherSlideshows(); // Reset other slideshows
                 });
             });
 
             // Left and right button navigation
-            this.leftButton.addEventListener('click', () => this.prevSlide());
-            this.rightButton.addEventListener('click', () => this.nextSlide());
+            this.leftButton.addEventListener('click', () => {
+                this.prevSlide();
+                this.resetOtherSlideshows(); // Reset other slideshows
+            });
+            this.rightButton.addEventListener('click', () => {
+                this.nextSlide();
+                this.resetOtherSlideshows(); // Reset other slideshows
+            });
 
             // Keyboard navigation
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') this.prevSlide();
-                if (e.key === 'ArrowRight') this.nextSlide();
+                if (e.key === 'ArrowLeft') {
+                    this.prevSlide();
+                    this.resetOtherSlideshows(); // Reset other slideshows
+                }
+                if (e.key === 'ArrowRight') {
+                    this.nextSlide();
+                    this.resetOtherSlideshows(); // Reset other slideshows
+                }
             });
 
             // Show navigation buttons on hover
@@ -94,13 +108,26 @@ document.addEventListener('DOMContentLoaded', () => {
             this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
             this.showSlide();
         }
+
+        resetOtherSlideshows() {
+            // Reset all other slideshows to their first slide
+            this.allSlideshows.forEach(slideshow => {
+                if (slideshow !== this) {
+                    slideshow.currentIndex = 0;
+                    slideshow.showSlide();
+                }
+            });
+        }
     }
 
     // Initialize slideshows with their corresponding description elements
     const slideshowGroups = document.querySelectorAll('.slideshow-group');
+    const allSlideshows = []; // Store references to all slideshows
+
     slideshowGroups.forEach((group, index) => {
         const container = group.querySelector('.slideshow-container');
         const description = group.querySelector(`#desc-${index + 1}`);
-        new Slideshow(container, description);
+        const slideshow = new Slideshow(container, description, allSlideshows);
+        allSlideshows.push(slideshow); // Add to the list of all slideshows
     });
 });
