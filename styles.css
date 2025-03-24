@@ -221,7 +221,7 @@ body.photograph-page main {
 .slideshow-container {
     position: relative;
     max-width: 100%; /* Full width */
-    margin: 0 auto;
+    margin: 0 auto 30px; /* Add 30px of space below each container */
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
