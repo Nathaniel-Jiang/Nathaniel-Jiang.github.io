@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     // Highlight current page
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Slideshow class with manual and hover control
+    // Slideshow class with hover and click functionality
     class Slideshow {
         constructor(container) {
             this.container = container;
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         init() {
             this.renderSlides();
             this.setupEventListeners();
-            this.showSlide(); // Show first slide by default
+            this.showSlide(); // Show the first slide by default
         }
 
         renderSlides() {
@@ -43,17 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setupEventListeners() {
-            // Add click event listeners to dots
+            // Add hover and click event listeners to dots
             this.dots.forEach(dot => {
-                dot.addEventListener('click', () => {
+                dot.addEventListener('mouseenter', () => {
                     this.currentIndex = parseInt(dot.dataset.slide);
                     this.showSlide();
                 });
-            });
 
-            // Add hover event listeners to dots
-            this.dots.forEach(dot => {
-                dot.addEventListener('mouseenter', () => {
+                dot.addEventListener('click', () => {
                     this.currentIndex = parseInt(dot.dataset.slide);
                     this.showSlide();
                 });
@@ -68,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Initialize slideshows
+    // Initialize the slideshow
     document.querySelectorAll('.slideshow-container').forEach(container => {
         new Slideshow(container);
     });
