@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     // Highlight current page
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -38,17 +37,42 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="dot ${index === 0 ? 'active' : ''}" data-slide="${index}"></span>
                     `).join('')}
                 </div>
+                <div class="navigation">
+                    <button class="nav-button left">❮</button>
+                    <button class="nav-button right">❯</button>
+                </div>
             `;
             this.slides = this.container.querySelectorAll('.slide');
             this.dots = this.container.querySelectorAll('.dot');
+            this.leftButton = this.container.querySelector('.nav-button.left');
+            this.rightButton = this.container.querySelector('.nav-button.right');
         }
 
         setupEventListeners() {
+            // Dot navigation
             this.dots.forEach(dot => {
                 dot.addEventListener('click', () => {
                     this.currentIndex = parseInt(dot.dataset.slide);
                     this.showSlide();
                 });
+            });
+
+            // Left and right button navigation
+            this.leftButton.addEventListener('click', () => this.prevSlide());
+            this.rightButton.addEventListener('click', () => this.nextSlide());
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') this.prevSlide();
+                if (e.key === 'ArrowRight') this.nextSlide();
+            });
+
+            // Show navigation buttons on hover
+            this.container.addEventListener('mouseenter', () => {
+                this.container.querySelector('.navigation').style.opacity = '1';
+            });
+            this.container.addEventListener('mouseleave', () => {
+                this.container.querySelector('.navigation').style.opacity = '0';
             });
         }
 
@@ -59,6 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             // Update description
             this.descriptionElement.textContent = this.slidesData[this.currentIndex].desc;
+        }
+
+        nextSlide() {
+            this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+            this.showSlide();
+        }
+
+        prevSlide() {
+            this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+            this.showSlide();
         }
     }
 

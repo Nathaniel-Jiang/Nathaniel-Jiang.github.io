@@ -321,6 +321,48 @@ body.photograph-page main {
     }
 }
 
+/* Navigation Buttons */
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.nav-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    pointer-events: auto; /* Enable interaction */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-button.left {
+    margin-left: 10px;
+}
+
+.nav-button.right {
+    margin-right: 10px;
+}
+
+/* Show navigation buttons on hover */
+.slideshow-container:hover .navigation {
+    opacity: 1;
+}
+
 
 /* Adjust spacing for <h2> and <p> in cv.html */
 body.cv-page main h2 {
