@@ -213,7 +213,8 @@ body.photograph-page main {
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 45%; /* Set the width of each container */
+    width: 600px; /* Fixed width */
+    height: 400px; /* Fixed height */
     margin: 0 auto;
     overflow: hidden;
 }
