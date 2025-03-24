@@ -205,33 +205,20 @@ body.photograph-page main {
     width: 100%;
 }
 
-/* Slideshow Group (container + description) */
-.slideshow-group {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
-    max-width: 1200px; /* Limit total width */
-}
-
 /* Add space above first slideshow */
-.slideshow-wrapper .slideshow-group:first-of-type {
+.slideshow-wrapper .slideshow-container:first-of-type {
     margin-top: 50px;
 }
 
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    width: 65%; /* Allocate space for image */
-    max-width: 800px; /* Maximum image width */
-    margin: 0 0 50px 0;
+    width: 100%;
+    max-width: 1400px; /* Maximum width for larger screens */
+    max-height: 80vh; /* Limit height to fit within viewport */
+    margin: 0 auto 50px; /* Center horizontally, space below */
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: center;
+    background-color: #000; /* Contrast background */
 }
 
 /* Navigation Dots */
@@ -245,6 +232,7 @@ body.photograph-page main {
     background: rgba(0, 0, 0, 0.5);
     padding: 5px 15px;
     border-radius: 15px;
+    z-index: 10; /* Ensure dots are above description */
 }
 
 .dot {
@@ -264,33 +252,40 @@ body.photograph-page main {
 .slide {
     display: none;
     width: 100%;
+    height: 100%;
+    position: relative; /* For positioning description */
 }
 
 /* Make slide visible when active */
 .slide.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
 }
 
 /* Center images within slides */
 .slide img {
-    max-height: 70vh;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
-    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    max-height: 80vh; /* Match container height */
+    object-fit: contain; /* Maintain aspect ratio, show entire image */
     display: block;
 }
 
 /* Description */
-.description {
-    width: 35%; /* Allocate space for description */
+.slide .description {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%); /* Vertically center */
+    width: 30%; /* Relative to container width */
     max-width: 400px;
     font-size: 1.2rem;
-    color: #333;
+    color: #fff; /* White for contrast on dark background */
     line-height: 1.6;
     text-align: left;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 5; /* Above image but below dots */
 }
 
 /* Fade Animation */
@@ -305,20 +300,22 @@ body.photograph-page main {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .slideshow-group {
-        flex-direction: column;
-        gap: 20px;
-    }
-
     .slideshow-container {
-        width: 100%;
-        max-width: 100%;
+        max-height: 60vh; /* Smaller height on mobile */
     }
 
-    .description {
+    .slide img {
+        max-height: 60vh;
+    }
+
+    .slide .description {
+        position: static; /* Remove absolute positioning */
+        transform: none; /* Remove centering */
         width: 100%;
         max-width: 100%;
         font-size: 1rem;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.8); /* Slightly darker for readability */
     }
 }
 
