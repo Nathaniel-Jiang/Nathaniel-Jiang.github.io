@@ -141,7 +141,7 @@ body.publications-page main h4 {
 .publication-year {
     display: flex;
     align-items: flex-start;
-    gap: 10px; /* Space between year and publication */
+    gap: 15px; /* Space between year and publication */
     text-align: left;
     margin-left: 0 !important; /* Remove extra space on the left */
     padding-left: 0; /* Ensure no padding is added */
@@ -160,7 +160,7 @@ body.publications-page main h4 {
 .publication-year h4 {
     font-size: 1.2rem;
     color: #000;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     max-width: 800px; /* Adjust the width as needed */
     word-wrap: break-word; /* Break long words if necessary */
     white-space: normal; /* Allow text to wrap to the next line */
