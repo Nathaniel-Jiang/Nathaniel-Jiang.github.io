@@ -175,6 +175,19 @@ section p {
     }
 }
 
+/* Center and resize the embedded PDF */
+.cv-iframe-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cv-iframe-container iframe {
+    width: 80%; /* Adjust the width as needed */
+    height: 600px; /* Adjust the height as needed */
+    border: none;
+}
+
 /* Footer */
 footer {
     position: relative;
