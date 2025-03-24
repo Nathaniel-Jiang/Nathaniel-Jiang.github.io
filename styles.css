@@ -213,8 +213,9 @@ body.photograph-page main {
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    width: 600px; /* Fixed width */
-    height: 400px; /* Fixed height */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
     margin: 0 auto;
     overflow: hidden;
     background-color: #f9f9f9; /* Optional: Add a background color */
