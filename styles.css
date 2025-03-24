@@ -192,20 +192,25 @@ body.publications-page main h4 {
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 1000%; /* Increase width to 90% */
+    max-width: 100%; /* Make it take the full width */
     margin: auto;
     overflow: hidden;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Slides */
 .slide {
-    display: none; /* Hide all slides by default */
-    width: 100%; /* Full width */
+    display: none;
+    position: absolute; /* Stack slides on top of each other */
+    width: 100%; /* Ensure full-width images */
+    text-align: center;
+    opacity: 0; /* Initially hide the slides */
+    transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.slide img {
+    width: 100%;
     height: auto;
-    position: relative; /* Ensure slides are positioned correctly */
+    max-height: 600px; /* Adjust image height */
 }
 
 /* Fade Animation */
