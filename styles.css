@@ -219,7 +219,10 @@ body.photograph-page main {
     margin: 0 auto 50px; /* Add 50px of space below each container */
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Remove or adjust the shadow */
+    box-shadow: none; /* Remove shadow */
+    /* OR reduce the shadow intensity */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 /* Navigation Dots */
@@ -290,7 +293,6 @@ body.photograph-page main {
     justify-content: flex-start; /* Align items to the left */
     gap: 20px; /* Add fixed space between the image and text */
     width: 100%; /* Ensure the container takes the full width */
-    position: relative; /* Ensure proper positioning of child elements */
 }
 
 /* Image styling */
