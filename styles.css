@@ -229,7 +229,7 @@ body.photograph-page main {
 
 /* Navigation Dots */
 .dot-container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     margin-top: 20px; /* Space between slideshow and dots */
