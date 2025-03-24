@@ -209,7 +209,7 @@ body.photograph-page main {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    width: 80%; /* Ensure full width */
+    width: 50%; /* Ensure full width */
 }
 
 /* Slideshow Container */
