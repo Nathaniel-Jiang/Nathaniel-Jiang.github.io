@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Slideshow class with manual control only
+    // Slideshow class with manual and hover control
     class Slideshow {
         constructor(container) {
             this.container = container;
@@ -43,8 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setupEventListeners() {
+            // Add click event listeners to dots
             this.dots.forEach(dot => {
                 dot.addEventListener('click', () => {
+                    this.currentIndex = parseInt(dot.dataset.slide);
+                    this.showSlide();
+                });
+            });
+
+            // Add hover event listeners to dots
+            this.dots.forEach(dot => {
+                dot.addEventListener('mouseenter', () => {
                     this.currentIndex = parseInt(dot.dataset.slide);
                     this.showSlide();
                 });
