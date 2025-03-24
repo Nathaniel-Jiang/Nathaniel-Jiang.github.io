@@ -285,25 +285,33 @@ body.photograph-page main {
 
 /* Container for image and text */
 .image-text-container {
+    position: relative; /* Set the parent container to relative for absolute positioning */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px; /* Add space between the image and text */
+    justify-content: center;
 }
 
 /* Image styling */
 .image-text-container img {
-    max-width: 50%; /* Limit the image width to 50% of the container */
+    width: 100%; /* Allow the image to take the full width of the container */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional: Add rounded corners */
 }
 
 /* Text styling */
 .image-text-container .text {
-    max-width: 50%; /* Limit the text width to 50% of the container */
+    position: absolute; /* Position the text over the image */
+    right: 20px; /* Position the text 20px from the right edge */
+    top: 50%; /* Center the text vertically */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent background */
+    padding: 10px 15px; /* Add padding around the text */
+    border-radius: 5px; /* Optional: Add rounded corners */
     font-size: 1.2rem;
     color: #333;
     line-height: 1.6;
+    max-width: 300px; /* Limit the width of the text box */
+    text-align: left; /* Align text to the left */
 }
 
 /* Adjust spacing for <h2> and <p> in cv.html */
