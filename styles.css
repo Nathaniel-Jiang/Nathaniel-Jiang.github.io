@@ -294,9 +294,10 @@ body.photograph-page main {
 
 /* Image styling */
 .image-text-container img {
-    width: 100%; /* Allow the image to take the full width of the container */
+    width: 100%; /* Allow the image to take 100% of the container width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional: Add rounded corners */
+    flex: 1; /* Allow the image to take up available space */
 }
 
 /* Text styling */
