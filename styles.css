@@ -223,30 +223,12 @@ body.photograph-page main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
 }
 
-/* Slides */
-.slide {
-    display: none;
-    width: 100%;
-    text-align: center;
-}
-
-.slide img {
-    max-width: 100%; /* Scale the image to fit within the container width */
-    height: auto; /* Maintain the aspect ratio of the image */
-    border-radius: 10px; /* Optional: Match the container's rounded corners */
-    background-color: #f9f9f9; /* Optional: Add a background color for empty space */
-}
-
-.slide.active {
-    display: block;
-}
-
 /* Navigation Dots */
 .dot-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px; /* Add space above the dots */
     width: 100%;
 }
 
@@ -263,6 +245,24 @@ body.photograph-page main {
 
 .dot.active {
     background-color: #717171;
+}
+
+/* Slides */
+.slide {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+.slide img {
+    max-width: 100%; /* Scale the image to fit within the container width */
+    height: auto; /* Maintain the aspect ratio of the image */
+    border-radius: 10px; /* Optional: Match the container's rounded corners */
+    background-color: #f9f9f9; /* Optional: Add a background color for empty space */
+}
+
+.slide.active {
+    display: block;
 }
 
 /* Fade Animation */
