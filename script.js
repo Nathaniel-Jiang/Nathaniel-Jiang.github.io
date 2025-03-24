@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.slidesData = JSON.parse(container.dataset.slides);
             this.currentIndex = 0;
             this.allSlideshows = allSlideshows; // Reference to all slideshows
+            this.isActive = false; // Track if this slideshow is active
             this.init();
         }
 
@@ -69,24 +70,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.resetOtherSlideshows(); // Reset other slideshows
             });
 
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') {
-                    this.prevSlide();
-                    this.resetOtherSlideshows(); // Reset other slideshows
-                }
-                if (e.key === 'ArrowRight') {
-                    this.nextSlide();
-                    this.resetOtherSlideshows(); // Reset other slideshows
-                }
-            });
-
-            // Show navigation buttons on hover
+            // Activate slideshow on hover
             this.container.addEventListener('mouseenter', () => {
+                this.isActive = true; // Mark this slideshow as active
                 this.container.querySelector('.navigation').style.opacity = '1';
             });
             this.container.addEventListener('mouseleave', () => {
+                this.isActive = false; // Mark this slideshow as inactive
                 this.container.querySelector('.navigation').style.opacity = '0';
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (this.isActive) { // Only allow navigation for the active slideshow
+                    if (e.key === 'ArrowLeft') {
+                        this.prevSlide();
+                        this.resetOtherSlideshows(); // Reset other slideshows
+                    }
+                    if (e.key === 'ArrowRight') {
+                        this.nextSlide();
+                        this.resetOtherSlideshows(); // Reset other slideshows
+                    }
+                }
             });
         }
 
