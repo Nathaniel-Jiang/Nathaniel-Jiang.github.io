@@ -106,7 +106,7 @@ section p {
 /* Adjust spacing for <h2> and <p> in cv.html */
 body.publications-page main h3 {
     margin: 0 !important; /* Reset all margins */
-    margin-top: 100px !important; /* Add the desired space above the <h3> */
+    margin-top: 200px !important; /* Add the desired space above the <h3> */
 }
 
 body.publications-page main h4 {
