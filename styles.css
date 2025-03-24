@@ -229,10 +229,11 @@ body.photograph-page main {
 }
 
 .slide img {
-    width: 100%; /* Scale image to fit the container width */
-    height: 100%; /* Scale image to fit the container height */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
+    width: 100%; /* Scale the image to fit the container width */
+    height: 100%; /* Scale the image to fit the container height */
+    object-fit: contain; /* Preserve the aspect ratio and fit the image within the container */
     border-radius: 10px; /* Optional: Match the container's rounded corners */
+    background-color: #f9f9f9; /* Optional: Add a background color for empty space */
 }
 
 .slide.active {
