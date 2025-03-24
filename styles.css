@@ -212,14 +212,10 @@ body.photograph-page main {
 
 /* Slideshow Container */
 .slideshow-container {
-    position: fixed; /* Fix the container's position */
-    top: 50%; /* Position it vertically in the middle of the viewport */
-    left: 50%; /* Position it horizontally in the middle of the viewport */
-    transform: translate(-50%, -50%); /* Center the container */
-    max-width: 45%; /* Set the maximum width */
+    position: relative;
+    max-width: 45%; /* Set the width of each container */
     margin: 0 auto;
     overflow: hidden;
-    z-index: 1000; /* Ensure it stays above other elements */
 }
 
 .slide {
