@@ -111,7 +111,7 @@ body.publications-page main h3 {
 
 body.publications-page main h4 {
     margin: 0 !important; /* Reset all margins */
-    margin-top: 50px !important; /* Add the desired space above the <p> */
+    margin-top: 60px !important; /* Add the desired space above the <p> */
 }
 
 .publication {
