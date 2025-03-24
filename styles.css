@@ -244,10 +244,10 @@ body.photograph-page main {
 /* Navigation Dots */
 .dot-container {
     display: flex;
-    justify-content: center; /* Center the dots horizontally */
-    align-items: center; /* Align dots vertically */
-    margin-top: 10px; /* Add spacing between the container and the dots */
-    width: 100%; /* Match the width of the slideshow container */
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
 }
 
 .dot {
