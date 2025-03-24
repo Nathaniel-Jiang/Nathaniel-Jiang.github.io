@@ -131,7 +131,7 @@ body.publications-page main h4 {
     margin-bottom: 20px;
     text-align: left;
     text-shadow: none;
-    margin-left: 40px; /* Fixed margin from the left for consistency */
+    margin-left: 20px !important; /* Fixed margin from the left for consistency */
     word-wrap: break-word; /* 强制单词内换行 */
     white-space: normal;   /* 允许换行，默认值，可明确指定 */
     max-width: 800px;      /* 限制标题宽度，与正文接近 */
