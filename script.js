@@ -8,20 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Slideshow class for better encapsulation
+    // Slideshow class with manual control only
     class Slideshow {
         constructor(container) {
             this.container = container;
             this.slidesData = JSON.parse(container.dataset.slides);
             this.currentIndex = 0;
-            this.timeoutId = null;
             this.init();
         }
 
         init() {
             this.renderSlides();
             this.setupEventListeners();
-            this.start();
+            this.showSlide(); // Show first slide by default
         }
 
         renderSlides() {
@@ -46,15 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setupEventListeners() {
             this.dots.forEach(dot => {
                 dot.addEventListener('click', () => {
-                    this.pause();
                     this.currentIndex = parseInt(dot.dataset.slide);
                     this.showSlide();
-                    this.start();
                 });
             });
-
-            this.container.addEventListener('mouseenter', () => this.pause());
-            this.container.addEventListener('mouseleave', () => this.start());
         }
 
         showSlide() {
@@ -62,19 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 slide.classList.toggle('active', index === this.currentIndex);
                 this.dots[index].classList.toggle('active', index === this.currentIndex);
             });
-        }
-
-        nextSlide() {
-            this.currentIndex = (this.currentIndex + 1) % this.slidesData.length;
-            this.showSlide();
-        }
-
-        start() {
-            this.timeoutId = setInterval(() => this.nextSlide(), 12000);
-        }
-
-        pause() {
-            clearInterval(this.timeoutId);
         }
     }
 
