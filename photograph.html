@@ -8,15 +8,15 @@
     <title>Nathaniel Jiang - Photograph</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="photograph-page">
     <header>
         <nav>
-            <a href="index.html">ABOUT ME</a>
-            <a href="research.html">RESEARCH</a>
-            <a href="publications.html">PUBLICATIONS</a>
-            <a href="photograph.html">PHOTOGRAPH</a>
+            <a href="index.html">About</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="photograph.html" aria-current="page">Photograph</a>
             <a href="cv.html">CV</a>
-            <a href="contact.html">CONTACT</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -24,56 +24,24 @@
         <section>
             <h2>Photo Slideshow</h2>
             <div class="slideshow-wrapper">
-                <div class="slideshow-container">
-                    <div class="slide fade">
-                        <img src="images/photo1.jpeg" alt="Photo 1">
-                    </div>
-                    <div class="slide fade">
-                        <img src="images/photo2.jpeg" alt="Photo 2">
-                    </div>
-                    <div class="slide fade">
-                        <img src="images/photo3.jpeg" alt="Photo 3">
-                    </div>
-                    <div class="dot-container">
-                        <span class="dot" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                    </div>
-                </div>
-
-                <div class="slideshow-container">
-                    <div class="slide fade">
-                        <img src="images/photo4.jpeg" alt="Photo 4">
-                    </div>
-                    <div class="slide fade">
-                        <img src="images/photo5.jpeg" alt="Photo 5">
-                    </div>
-                    <div class="slide fade">
-                        <img src="images/photo6.jpeg" alt="Photo 6">
-                    </div>
-                    <div class="dot-container">
-                        <span class="dot" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                    </div>
-                </div>
-
-                <div class="slideshow-container">
-                    <div class="slide fade">
-                        <img src="images/photo7.jpeg" alt="Photo 7">
-                    </div>
-                    <div class="slide fade">
-                        <img src="images/photo8.jpeg" alt="Photo 8">
-                    </div>
-                    <div class="slide fade">
-                        <img src="images/photo9.jpeg" alt="Photo 9">
-                    </div>
-                    <div class="dot-container">
-                        <span class="dot" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                    </div>
-                </div>
+                <!-- Simplified structure with data attributes -->
+                <div class="slideshow-container" data-slides='[
+                    {"src": "images/photo1.jpeg", "alt": "Photo 1"},
+                    {"src": "images/photo2.jpeg", "alt": "Photo 2"},
+                    {"src": "images/photo3.jpeg", "alt": "Photo 3"}
+                ]'></div>
+                
+                <div class="slideshow-container" data-slides='[
+                    {"src": "images/photo4.jpeg", "alt": "Photo 4"},
+                    {"src": "images/photo5.jpeg", "alt": "Photo 5"},
+                    {"src": "images/photo6.jpeg", "alt": "Photo 6"}
+                ]'></div>
+                
+                <div class="slideshow-container" data-slides='[
+                    {"src": "images/photo7.jpeg", "alt": "Photo 7"},
+                    {"src": "images/photo8.jpeg", "alt": "Photo 8"},
+                    {"src": "images/photo9.jpeg", "alt": "Photo 9"}
+                ]'></div>
             </div>
         </section>
     </main>
