@@ -189,25 +189,41 @@ body.publications-page main h4 {
     }
 }
 
-/* Photo Gallery Styling */
-.photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between photos */
-    padding: 20px;
-    justify-items: center; /* Center photos horizontally */
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%; /* Full width */
+    margin: auto;
+    overflow: hidden; /* Hide overflowing images */
 }
 
-.photo-gallery img {
-    width: 100%; /* Make photos responsive */
+/* Slides */
+.slide {
+    display: none; /* Hide all slides by default */
+    position: absolute;
+    width: 100%; /* Full width */
+    height: auto;
+}
+
+/* Fade Animation */
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+/* Keyframes for Fade Effect */
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Images */
+.slideshow-container img {
+    width: 100%; /* Make images responsive */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
-    transition: transform 0.3s ease; /* Smooth hover effect */
-}
-
-.photo-gallery img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Adjust spacing for <h2> and <p> in cv.html */
