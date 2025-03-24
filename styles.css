@@ -236,7 +236,7 @@ body.photograph-page main {
     height: 15px;
     width: 15px;
     margin: 0 5px;
-    background-color: #f9f9f9;
+    background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.3s ease;
