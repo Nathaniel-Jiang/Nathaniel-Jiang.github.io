@@ -202,10 +202,14 @@ body.publications-page main h4 {
 
 /* Slides */
 .slide {
-    display: none; /* Hide all slides by default */
-    position: absolute;
-    width: 100%; /* Full width */
+    display: none; /* Hide all slides initially */
+    width: 100%;
     height: auto;
+    position: relative; /* Change from absolute to relative */
+}
+
+.slide:first-child {
+    display: block; /* Ensure the first slide is visible on load */
 }
 
 /* Fade Animation */
@@ -216,7 +220,7 @@ body.publications-page main h4 {
 /* Keyframes for Fade Effect */
 @keyframes fadeEffect {
     from {
-        opacity: 0;
+        opacity: 0.3; /* Adjusted starting opacity */
     }
     to {
         opacity: 1;
