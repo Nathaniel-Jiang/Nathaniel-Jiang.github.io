@@ -291,7 +291,7 @@ body.photograph-page main {
     display: flex; /* Use flexbox to align image and text side by side */
     align-items: center; /* Vertically align the image and text */
     justify-content: flex-start; /* Align items to the left */
-    gap: 20px; /* Add fixed space between the image and text */
+    gap: 50px; /* Add fixed space between the image and text */
     width: 100%; /* Ensure the container takes the full width */
 }
 
