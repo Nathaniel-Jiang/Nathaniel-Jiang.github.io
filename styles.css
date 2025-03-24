@@ -213,12 +213,15 @@ body.photograph-page main {
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    width: 100%;
+    width: 100%; /* Full width */
     max-width: 1400px; /* Maximum width for larger screens */
-    max-height: 80vh; /* Limit height to fit within viewport */
-    margin: 0 auto 50px; /* Center horizontally, space below */
-    overflow: hidden;
-    background-color: #000; /* Contrast background */
+    height: 80vh; /* Set height to fit within the viewport */
+    margin: 0 auto; /* Center the container horizontally */
+    overflow: hidden; /* Hide any overflow */
+    display: flex; /* Use flexbox to align image and text side by side */
+    align-items: center; /* Vertically align the image and text */
+    gap: 20px; /* Add space between the image and text */
+    background-color: #000; /* Optional: Add a background color for contrast */
 }
 
 /* Navigation Dots */
@@ -270,22 +273,21 @@ body.photograph-page main {
     display: block;
 }
 
-/* Description */
+/* Description Styling */
 .slide .description {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%); /* Vertically center */
-    width: 30%; /* Relative to container width */
-    max-width: 400px;
-    font-size: 1.2rem;
-    color: #fff; /* White for contrast on dark background */
+    position: absolute; /* Position the text relative to the container */
+    top: 50%; /* Vertically center the text */
+    left: calc(60% + 20px); /* Position the text to the right of the image */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    font-size: 1.6rem;
+    color: #fff; /* White text for contrast */
     line-height: 1.6;
-    text-align: left;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    padding: 15px;
-    border-radius: 5px;
-    z-index: 5; /* Above image but below dots */
+    text-align: left; /* Align text to the left */
+    max-width: 30%; /* Limit the width of the text */
+    padding: 15px; /* Add padding around the text */
+    background: rgba(0, 0, 0, 0.7); /* Optional: Add a semi-transparent background */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    z-index: 5; /* Ensure the text is above the image */
 }
 
 /* Fade Animation */
