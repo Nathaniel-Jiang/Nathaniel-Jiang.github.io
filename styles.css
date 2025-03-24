@@ -179,15 +179,14 @@ section p {
 .cv-iframe-container {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 30px; /* Add spacing above the PDF */
 }
 
 .cv-iframe-container iframe {
-    width: 80%; /* Increase the width to 80% of the container */
-    max-width: 900px; /* Set a maximum width for larger screens */
-    height: auto; /* Automatically adjust the height */
-    aspect-ratio: 1 / 1.414; /* Maintain the aspect ratio of an A4 page (1:√2) */
-    border: none;
+    width: 90%; /* Adjust the width to make it wider (e.g., 90% of the container) */
+    max-width: 1200px; /* Set a maximum width for larger screens */
+    height: 80vh; /* Set the height to 80% of the viewport height */
+    border: none; /* Remove the border */
 }
 
 /* Footer */
