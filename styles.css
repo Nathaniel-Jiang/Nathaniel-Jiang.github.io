@@ -192,7 +192,7 @@ body.publications-page main h4 {
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 50%; /* Reduce width to 50% */
+    max-width: 80%; /* Reduce width to 50% */
     margin: auto;
     overflow: hidden; /* Hide overflowing images */
     background-color: #f9f9f9; /* Optional: Add a background color */
@@ -210,7 +210,7 @@ body.publications-page main h4 {
 
 /* Fade Animation */
 .fade {
-    animation: fadeEffect 1s ease-in-out; /* Reduce animation time */
+    animation: fadeEffect 1.5s ease-in-out; /* Reduce animation time */
 }
 
 /* Keyframes for Fade Effect */
