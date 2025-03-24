@@ -22,16 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 slides[i].classList.remove('active');
                 dots[i].classList.remove('active');
             }
-
+        
             slideIndex++;
             if (slideIndex >= slides.length) {
                 slideIndex = 0;
+                timeoutId = setTimeout(showSlides, 15000); // Longer delay after the last slide (15 seconds)
+                return;
             }
-
+        
             // Show current slide and activate dot
             slides[slideIndex].classList.add('active');
             dots[slideIndex].classList.add('active');
-            timeoutId = setTimeout(showSlides, 12000); // Change every 12 seconds
+            timeoutId = setTimeout(showSlides, 12000); // Regular delay (12 seconds)
         }
 
         // Manual dot navigation
