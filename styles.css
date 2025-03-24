@@ -217,6 +217,9 @@ body.photograph-page main {
     height: 400px; /* Fixed height */
     margin: 0 auto;
     overflow: hidden;
+    background-color: #f9f9f9; /* Optional: Add a background color */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
 }
 
 .slide {
@@ -226,10 +229,10 @@ body.photograph-page main {
 }
 
 .slide img {
-    width: 100%;
-    height: auto;
-    max-height: 400px; /* Balanced height */
-    border-radius: 10px;
+    width: 100%; /* Scale image to fit the container width */
+    height: 100%; /* Scale image to fit the container height */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    border-radius: 10px; /* Optional: Match the container's rounded corners */
 }
 
 .slide.active {
