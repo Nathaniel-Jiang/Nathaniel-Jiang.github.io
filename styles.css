@@ -207,11 +207,6 @@ body.photograph-page main {
     width: 100%; /* Ensure full width */
 }
 
-/* Add space above the first slideshow container */
-.slideshow-wrapper .slideshow-container:first-of-type {
-    margin-top: 50px; /* Add 20px of space above the first container */
-}
-
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
@@ -219,10 +214,45 @@ body.photograph-page main {
     margin: 0 auto 50px; /* Add 50px of space below each container */
     overflow: hidden;
     border-radius: 10px;
-    /* Remove or adjust the shadow */
-    box-shadow: none; /* Remove shadow */
-    /* OR reduce the shadow intensity */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Optional: Add a subtle shadow */
+    display: flex; /* Align image and description side by side */
+    align-items: center; /* Vertically align image and text */
+    gap: 20px; /* Add space between the image and text */
+}
+
+/* Slides */
+.slide {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+/* Active Slide */
+.slide.active {
+    display: flex; /* Show the active slide */
+    align-items: center; /* Vertically align image and text */
+    gap: 20px; /* Add space between the image and text */
+}
+
+/* Image Styling */
+.slide img {
+    max-height: 80vh; /* Set the maximum height to 80% of the viewport height */
+    width: auto; /* Automatically adjust the width to maintain the aspect ratio */
+    object-fit: contain; /* Ensure the image fits within the container without distortion */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    display: block; /* Ensure the image is treated as a block element */
+    margin: 0; /* Remove any default margins */
+    flex: 1; /* Allow the image to take up available space */
+}
+
+/* Description Styling */
+#image-description {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: left; /* Align text to the left */
+    max-width: 300px; /* Limit the width of the description */
+    flex: 1; /* Allow the description to take up remaining space */
 }
 
 /* Navigation Dots */
@@ -234,7 +264,7 @@ body.photograph-page main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto; /* Adjust width to fit the dots */
+    gap: 5px; /* Add spacing between dots */
     background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
     padding: 5px 10px; /* Optional: Add padding around the dots */
     border-radius: 10px; /* Optional: Add rounded corners */
@@ -255,27 +285,6 @@ body.photograph-page main {
     background-color: #fff;
 }
 
-/* Slides */
-.slide {
-    display: none;
-    width: 100%;
-    text-align: center;
-}
-
-/* Slides */
-.slide img {
-    max-height: 80vh; /* Set the maximum height to 80% of the viewport height */
-    width: auto; /* Automatically adjust the width to maintain the aspect ratio */
-    object-fit: contain; /* Ensure the image fits within the container without distortion */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    display: block; /* Ensure the image is treated as a block element */
-    margin: 0 auto; /* Center the image horizontally */
-}
-
-.slide.active {
-    display: block;
-}
-
 /* Fade Animation */
 .fade {
     animation: fadeEffect 1s ease-in-out;
@@ -286,41 +295,23 @@ body.photograph-page main {
     to { opacity: 1; }
 }
 
-/* Container for image */
-.image-text-container {
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
-    width: 100%; /* Ensure the container takes the full width */
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slideshow-container {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        gap: 10px; /* Reduce the gap */
+    }
 
-/* Dots */
-.dot-container {
-    position: absolute; /* Position the dots inside the slideshow container */
-    bottom: 10px; /* Position the dots 10px from the bottom of the container */
-    left: 50%; /* Center the dots horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px; /* Add spacing between dots */
-}
+    #image-description {
+        text-align: center; /* Center-align text for smaller screens */
+        max-width: 100%; /* Allow full width for the description */
+    }
 
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
+    .slide img {
+        max-width: 100%; /* Allow the image to take full width */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
-
-.dot.active {
-    background-color: #fff;
-}
-
 
 
 /* Adjust spacing for <h2> and <p> in cv.html */

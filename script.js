@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     // Highlight current page navigation
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -16,6 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
         let slideIndex = 0;
         let timeoutId;
 
+        // Descriptions for each slide
+        const descriptions = [
+            "This is the description for Photo 1.",
+            "This is the description for Photo 2.",
+            "This is the description for Photo 3."
+        ];
+
+        // Get the description element
+        const descriptionElement = document.getElementById('image-description');
+
         function showSlides() {
             // Hide all slides and deactivate dots
             for (let i = 0; i < slides.length; i++) {
@@ -31,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Show current slide and activate dot
             slides[slideIndex].classList.add('active');
             dots[slideIndex].classList.add('active');
+
+            // Update the description
+            descriptionElement.textContent = descriptions[slideIndex];
+
             timeoutId = setTimeout(showSlides, 12000); // Change every 12 seconds
         }
 
@@ -38,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < dots.length; i++) {
             dots[i].addEventListener('click', () => {
                 clearTimeout(timeoutId);
-                slideIndex = parseInt(dots[i].getAttribute('data-slide')) - 1;
+                slideIndex = i;
                 showSlides();
             });
         }
@@ -46,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Start with first slide
         slides[0].classList.add('active');
         dots[0].classList.add('active');
+        descriptionElement.textContent = descriptions[0]; // Set initial description
         showSlides();
 
         // Pause on hover
