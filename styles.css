@@ -204,9 +204,10 @@ body.photograph-page main {
 /* Slideshow Wrapper */
 .slideshow-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column; /* Stack containers vertically */
+    gap: 20px; /* Add space between containers */
     justify-content: center;
+    align-items: center; /* Center the containers horizontally */
 }
 
 /* Slideshow Container */
