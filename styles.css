@@ -189,6 +189,7 @@ body.publications-page main h4 {
     }
 }
 
+
 /* Adjust spacing for <h2> in photograph.html */
 body.photograph-page main h2 {
     margin: 0 !important; /* Reset all margins */
@@ -208,13 +209,13 @@ body.photograph-page main {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Ensure full width */
+    width: 80%; /* Ensure full width */
 }
 
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 80%; /* Full width */
+    max-width: 100%; /* Full width */
     margin: 0 auto;
     overflow: hidden;
     background-color: #f9f9f9;
