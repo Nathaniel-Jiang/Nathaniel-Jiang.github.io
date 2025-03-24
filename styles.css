@@ -201,7 +201,7 @@ body.photograph-page main {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    align-items: center; /* Center children horizontally */
+    align-items: center;
     width: 100%;
 }
 
@@ -214,13 +214,12 @@ body.photograph-page main {
 .slideshow-container {
     position: relative;
     max-width: 100%;
-    margin: 0 auto 50px; /* Center horizontally with auto margins */
+    margin: 0 auto 50px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    display: flex; /* Added to center contents */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex;
+    justify-content: center;
 }
 
 /* Navigation Dots */
@@ -253,26 +252,36 @@ body.photograph-page main {
 .slide {
     display: none;
     width: 100%;
-    text-align: center;
-    flex-shrink: 0; /* Prevent shrinking */
+    max-width: 1200px; /* Limit maximum width */
+    flex-direction: row; /* Arrange image and text side by side */
+    align-items: center; /* Vertically center content */
+    gap: 20px; /* Space between image and text */
+    padding: 20px; /* Add some padding */
 }
 
 /* Make slide visible when active */
 .slide.active {
-    display: flex; /* Changed to flex for centering */
-    justify-content: center; /* Center image horizontally */
-    align-items: center; /* Center image vertically */
+    display: flex;
 }
 
 /* Center images within slides */
 .slide img {
-    max-height: 80vh;
+    max-height: 70vh; /* Reduced to make room for text */
     width: auto;
-    max-width: 100%; /* Ensure it doesn't overflow container */
+    max-width: 60%; /* Limit image width to leave room for text */
     object-fit: contain;
     border-radius: 10px;
     display: block;
-    margin: 0 auto; /* Additional centering fallback */
+}
+
+/* Slide Description */
+.slide-description {
+    flex: 1; /* Take remaining space */
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;
+    max-width: 35%; /* Limit description width */
 }
 
 /* Fade Animation */
@@ -283,6 +292,24 @@ body.photograph-page main {
 @keyframes fadeEffect {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slide {
+        flex-direction: column; /* Stack image and text on small screens */
+        padding: 10px;
+    }
+
+    .slide img {
+        max-width: 100%; /* Full width on small screens */
+        max-height: 60vh;
+    }
+
+    .slide-description {
+        max-width: 100%; /* Full width on small screens */
+        font-size: 1rem;
+    }
 }
 
 
