@@ -267,7 +267,7 @@ body.photograph-page main {
 
 /* Fade Animation */
 .fade {
-    animation: fadeEffect 1.5s ease-in-out;
+    animation: fadeEffect 1s ease-in-out;
 }
 
 @keyframes fadeEffect {
