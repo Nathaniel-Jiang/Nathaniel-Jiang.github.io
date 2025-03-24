@@ -189,6 +189,18 @@ body.publications-page main h4 {
     }
 }
 
+/* Adjust spacing for <h2> in photograph.html */
+body.photograph-page main h2 {
+    margin: 0 !important; /* Reset all margins */
+    margin-top: 100px !important; /* Add the desired space above the <h2> */
+}
+
+/* Reset parent container spacing */
+body.photograph-page main {
+    margin: 0;
+    padding: 0;
+}
+
 /* Slideshow Wrapper */
 .slideshow-wrapper {
     display: flex;
