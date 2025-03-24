@@ -41,7 +41,7 @@ header nav a:hover {
 
 /* Main Content */
 main {
-    margin-top: 80px;
+    margin-top: 40px;
     padding: 20px;
     min-height: calc(100vh - 140px);
 }
@@ -177,7 +177,7 @@ section p {
 
 /* Adjust spacing for <h2> and <p> in cv.html */
 body.cv-page main h2 {
-    margin-top: 0px !important; /* Reduce the space above the <h2> */
+    margin-top: 15px !important; /* Reduce the space above the <h2> */
 }
 
 body.cv-page main p {
