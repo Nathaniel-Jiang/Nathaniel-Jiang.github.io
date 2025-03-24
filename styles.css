@@ -229,11 +229,17 @@ body.photograph-page main {
 
 /* Navigation Dots */
 .dot-container {
-    display: none;
+    position: absolute; /* Position the dots inside the slideshow container */
+    bottom: 10px; /* Position the dots 10px from the bottom of the container */
+    left: 50%; /* Center the dots horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Space between slideshow and dots */
-    width: 100%;
+    width: auto; /* Adjust width to fit the dots */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+    padding: 5px 10px; /* Optional: Add padding around the dots */
+    border-radius: 10px; /* Optional: Add rounded corners */
 }
 
 .dot {
