@@ -310,7 +310,6 @@ body.photograph-page main {
     text-align: left; /* Align text to the left */
     max-width: 300px; /* Limit the width of the text box */
     padding: 10px; /* Add padding inside the text box */
-    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent background */
     border-radius: 5px; /* Optional: Add rounded corners */
 }
 
