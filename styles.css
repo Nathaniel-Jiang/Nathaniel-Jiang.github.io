@@ -196,35 +196,47 @@ body.photograph-page main {
     padding: 0;
 }
 
-/* Slideshow Wrapper */
+/* Slideshow */
 .slideshow-wrapper {
     display: flex;
     flex-direction: column;
     gap: 50px;
     align-items: center;
-    width: 100%;
 }
 
-/* Add space above first slideshow */
-.slideshow-wrapper .slideshow-container:first-of-type {
-    margin-top: 50px;
-}
-
-/* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 100%; /* Full width */
-    height: 80vh; /* Set the height to 80% of the viewport */
-    margin: 0 auto; /* Center the container horizontally */
-    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Optional: Add a subtle shadow */
-    display: flex; /* Use flexbox to center content */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    overflow: hidden;
 }
 
-/* Navigation Dots */
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.fade {
+    animation: fadeEffect 1s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .dot-container {
     position: absolute;
     bottom: 15px;
@@ -243,48 +255,12 @@ body.photograph-page main {
     background: #bbb;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .dot.active {
     background: #fff;
 }
-
-/* Slides */
-.slide {
-    display: none; /* Hide all slides by default */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    text-align: center;
-    display: flex; /* Use flexbox to center the image */
-    justify-content: center; /* Center image horizontally */
-    align-items: center; /* Center image vertically */
-}
-
-/* Active Slide */
-.slide.active {
-    display: flex; /* Show the active slide */
-}
-
-.slide img {
-    max-height: 80vh;
-    width: auto;
-    object-fit: contain;
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto;
-}
-
-/* Fade Animation */
-.fade {
-    animation: fadeEffect 1s ease-in-out;
-}
-
-@keyframes fadeEffect {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 
 
 /* Adjust spacing for <h2> and <p> in cv.html */
