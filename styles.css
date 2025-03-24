@@ -189,33 +189,15 @@ body.publications-page main h4 {
     }
 }
 
-/* Photo Gallery Styling */
-.photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between photos */
-    padding: 20px;
-    justify-items: center; /* Center photos horizontally */
-}
-
-.photo-gallery img {
-    width: 100%; /* Make photos responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
-    transition: transform 0.3s ease; /* Smooth hover effect */
-}
-
-.photo-gallery img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-/* Slideshow Container */
+//* Slideshow Container */
 .slideshow-container {
     position: relative;
     max-width: 100%; /* Full width */
     margin: auto;
     overflow: hidden; /* Hide overflowing images */
+    background-color: #f9f9f9; /* Optional: Add a background color */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
 }
 
 /* Slides */
@@ -245,6 +227,27 @@ body.publications-page main h4 {
 .slideshow-container img {
     width: 100%; /* Make images responsive */
     height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+/* Optional: Add navigation dots */
+.dot-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #717171;
 }
 
 /* Adjust spacing for <h2> and <p> in cv.html */
