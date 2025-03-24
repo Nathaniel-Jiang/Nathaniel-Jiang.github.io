@@ -215,7 +215,7 @@ body.photograph-page main {
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 100%; /* Full width */
+    max-width: 50%; /* Full width */
     margin: 0 auto;
     overflow: hidden;
     background-color: #f9f9f9;
