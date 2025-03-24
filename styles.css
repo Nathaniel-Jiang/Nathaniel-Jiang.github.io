@@ -264,7 +264,7 @@ body.photograph-page main {
 
 /* Slides */
 .slide img {
-    max-height: 80vh; /* Set the maximum height to 100% of the viewport height */
+    max-height: 80vh; /* Set the maximum height to 80% of the viewport height */
     width: auto; /* Automatically adjust the width to maintain the aspect ratio */
     object-fit: contain; /* Ensure the image fits within the container without distortion */
     border-radius: 10px; /* Optional: Add rounded corners */
@@ -286,36 +286,42 @@ body.photograph-page main {
     to { opacity: 1; }
 }
 
-/* Container for image and text */
+/* Container for image */
 .image-text-container {
-    display: flex; /* Use flexbox to align image and text side by side */
-    align-items: center; /* Vertically align the image and text */
-    justify-content: flex-start; /* Align items to the left */
-    gap: 50px; /* Add fixed space between the image and text */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
     width: 100%; /* Ensure the container takes the full width */
 }
 
-/* Image styling */
-.image-text-container img {
-    max-width: 100%; /* Allow the image to scale dynamically */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    flex-shrink: 0; /* Prevent the image from shrinking */
+/* Dots */
+.dot-container {
+    position: absolute; /* Position the dots inside the slideshow container */
+    bottom: 10px; /* Position the dots 10px from the bottom of the container */
+    left: 50%; /* Center the dots horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; /* Add spacing between dots */
 }
 
-/* Text styling */
-.image-text-container .text {
-    flex-shrink: 0; /* Prevent the text from shrinking */
-    font-size: 1.2rem;
-    color: #333; /* Text color */
-    line-height: 1.6;
-    text-align: left; /* Align text to the left */
-    max-width: 300px; /* Limit the width of the text box */
-    padding: 0; /* Remove padding */
-    border: none; /* Remove any borders */
-    background: none; /* Ensure no background is applied */
-    border-radius: 0; /* Remove rounded corners */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
+
+.dot.active {
+    background-color: #fff;
+}
+
+
 
 /* Adjust spacing for <h2> and <p> in cv.html */
 body.cv-page main h2 {
