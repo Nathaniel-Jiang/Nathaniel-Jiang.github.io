@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Show current slide and activate dot
             slides[slideIndex].classList.add('active');
             dots[slideIndex].classList.add('active');
-            timeoutId = setTimeout(showSlides, 15000); // Change every 12 seconds
+            timeoutId = setTimeout(showSlides, 9000); // Change every 12 seconds
         }
 
         // Manual dot navigation
