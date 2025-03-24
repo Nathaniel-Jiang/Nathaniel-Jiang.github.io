@@ -221,7 +221,6 @@ body.photograph-page main {
     display: flex; /* Use flexbox to align image and text side by side */
     align-items: center; /* Vertically align the image and text */
     gap: 20px; /* Add space between the image and text */
-    background-color: #000; /* Optional: Add a background color for contrast */
 }
 
 /* Navigation Dots */
@@ -279,7 +278,7 @@ body.photograph-page main {
     top: 50%; /* Vertically center the text */
     left: calc(60% + 20px); /* Position the text to the right of the image */
     transform: translateY(-50%); /* Adjust for perfect vertical centering */
-    font-size: 1.6rem;
+    font-size: 3rem;
     color: #fff; /* White text for contrast */
     line-height: 1.6;
     text-align: left; /* Align text to the left */
@@ -292,7 +291,7 @@ body.photograph-page main {
 
 /* Fade Animation */
 .fade {
-    animation: fadeEffect 1s ease-in-out;
+    animation: fadeEffect 0.5s ease-in-out;
 }
 
 @keyframes fadeEffect {
