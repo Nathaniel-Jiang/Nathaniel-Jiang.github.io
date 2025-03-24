@@ -209,13 +209,13 @@ body.photograph-page main {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    width: 50%; /* Ensure full width */
+    width: 100%; /* Ensure full width */
 }
 
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 50%; /* Full width */
+    max-width: 100%; /* Full width */
     margin: 0 auto;
     overflow: hidden;
     background-color: #f9f9f9;
@@ -236,7 +236,7 @@ body.photograph-page main {
     height: 15px;
     width: 15px;
     margin: 0 5px;
-    background-color: #bbb;
+    background-color: #f9f9f9;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.3s ease;
