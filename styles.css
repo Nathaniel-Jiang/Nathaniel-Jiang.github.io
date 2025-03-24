@@ -285,10 +285,10 @@ body.photograph-page main {
 
 /* Container for image and text */
 .image-text-container {
-    display: flex; /* Use flexbox to align image and text */
-    flex-direction: column; /* Stack the image and text vertically */
-    align-items: center; /* Center the image and text horizontally */
-    gap: 10px; /* Add space between the image and text */
+    display: flex; /* Use flexbox to align image and text side by side */
+    align-items: center; /* Vertically align the image and text */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 20px; /* Add fixed space between the image and text */
     width: 100%; /* Ensure the container takes the full width */
 }
 
@@ -301,12 +301,15 @@ body.photograph-page main {
 
 /* Text styling */
 .image-text-container .text {
+    margin-left: 20px; /* Add space between the image and text */
     font-size: 1.2rem;
     color: #333;
     line-height: 1.6;
-    text-align: center; /* Center the text under the image */
-    padding: 10px; /* Optional: Add padding around the text */
-    max-width: 800px; /* Optional: Limit the width of the text */
+    text-align: left; /* Align text to the left */
+    max-width: 300px; /* Limit the width of the text box */
+    padding: 10px; /* Add padding inside the text box */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent background */
+    border-radius: 5px; /* Optional: Add rounded corners */
 }
 
 /* Adjust spacing for <h2> and <p> in cv.html */
