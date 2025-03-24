@@ -305,12 +305,14 @@ body.photograph-page main {
 .image-text-container .text {
     flex-shrink: 0; /* Prevent the text from shrinking */
     font-size: 1.2rem;
-    color: #333;
+    color: #333; /* Text color */
     line-height: 1.6;
     text-align: left; /* Align text to the left */
     max-width: 300px; /* Limit the width of the text box */
-    padding: 10px; /* Add padding inside the text box */
-    border-radius: 5px; /* Optional: Add rounded corners */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove any borders */
+    background: none; /* Ensure no background is applied */
+    border-radius: 0; /* Remove rounded corners */
 }
 
 /* Adjust spacing for <h2> and <p> in cv.html */
