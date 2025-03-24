@@ -178,7 +178,7 @@ section p {
 /* Adjust spacing for <h2> and <p> in cv.html */
 body.cv-page main h2 {
     margin: 0 !important; /* Reset all margins */
-    margin-top: 50px !important; /* Add the desired space above the <h2> */
+    margin-top: 80px !important; /* Add the desired space above the <h2> */
 }
 
 body.cv-page main p {
