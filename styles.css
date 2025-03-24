@@ -204,23 +204,22 @@ body.photograph-page main {
 /* Slideshow Wrapper */
 .slideshow-wrapper {
     display: flex;
-    flex-direction: column; /* Stack containers vertically */
-    gap: 20px; /* Add space between containers */
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
-    align-items: center; /* Center the containers horizontally */
+    align-items: center;
+    width: 100%; /* Ensure full width */
 }
 
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
+    max-width: 100%; /* Full width */
     margin: 0 auto;
     overflow: hidden;
-    background-color: #f9f9f9; /* Optional: Add a background color */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation Dots */
@@ -228,7 +227,7 @@ body.photograph-page main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Add space above the dots */
+    margin-top: 20px; /* Space between slideshow and dots */
     width: 100%;
 }
 
@@ -255,10 +254,10 @@ body.photograph-page main {
 }
 
 .slide img {
-    max-width: 100%; /* Scale the image to fit within the container width */
-    height: auto; /* Maintain the aspect ratio of the image */
-    border-radius: 10px; /* Optional: Match the container's rounded corners */
-    background-color: #f9f9f9; /* Optional: Add a background color for empty space */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
 .slide.active {
@@ -274,6 +273,7 @@ body.photograph-page main {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
 
 /* Adjust spacing for <h2> and <p> in cv.html */
 body.cv-page main h2 {
