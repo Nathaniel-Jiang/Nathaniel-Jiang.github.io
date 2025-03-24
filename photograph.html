@@ -3,38 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Photograph of Peng (Nathaniel) Jiang.">
+    <meta name="description" content="Photographs of Peng (Nathaniel) Jiang.">
     <meta name="author" content="Peng (Nathaniel) Jiang">
     <title>Nathaniel Jiang - Photograph</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-    .slideshow-container {
-        position: relative;
-        max-width: 50%; /* Reduce width to 50% of the container */
-        margin: auto;
-    }
-
-    .slide {
-        display: none;
-        width: 100%;
-        text-align: center;
-    }
-
-    .slide img {
-        width: 100%;
-        height: auto;
-        max-height: 300px; /* Limit height for smaller display */
-    }
-
-    .fade {
-        animation: fadeEffect 1s ease-in-out;
-    }
-
-    @keyframes fadeEffect {
-        from { opacity: 0.4; }
-        to { opacity: 1; }
-    }
-    </style>
 </head>
 <body>
     <header>
@@ -51,39 +23,56 @@
     <main>
         <section>
             <h2>Photo Slideshow</h2>
-            <div class="slideshow-container">
-                <div class="slide fade">
-                    <img src="images/photo1.jpeg" alt="Photo 1">
+            <div class="slideshow-wrapper">
+                <div class="slideshow-container">
+                    <div class="slide fade">
+                        <img src="images/photo1.jpeg" alt="Photo 1">
+                    </div>
+                    <div class="slide fade">
+                        <img src="images/photo2.jpeg" alt="Photo 2">
+                    </div>
+                    <div class="slide fade">
+                        <img src="images/photo3.jpeg" alt="Photo 3">
+                    </div>
+                    <div class="dot-container">
+                        <span class="dot" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
                 </div>
-                <div class="slide fade">
-                    <img src="images/photo2.jpeg" alt="Photo 2">
-                </div>
-                <div class="slide fade">
-                    <img src="images/photo3.jpeg" alt="Photo 3">
-                </div>
-            </div>
 
-            <div class="slideshow-container">
-                <div class="slide fade">
-                    <img src="images/photo4.jpeg" alt="Photo 4">
+                <div class="slideshow-container">
+                    <div class="slide fade">
+                        <img src="images/photo4.jpeg" alt="Photo 4">
+                    </div>
+                    <div class="slide fade">
+                        <img src="images/photo5.jpeg" alt="Photo 5">
+                    </div>
+                    <div class="slide fade">
+                        <img src="images/photo6.jpeg" alt="Photo 6">
+                    </div>
+                    <div class="dot-container">
+                        <span class="dot" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
                 </div>
-                <div class="slide fade">
-                    <img src="images/photo5.jpeg" alt="Photo 5">
-                </div>
-                <div class="slide fade">
-                    <img src="images/photo6.jpeg" alt="Photo 6">
-                </div>
-            </div>
 
-            <div class="slideshow-container">
-                <div class="slide fade">
-                    <img src="images/photo7.jpeg" alt="Photo 7">
-                </div>
-                <div class="slide fade">
-                    <img src="images/photo8.jpeg" alt="Photo 8">
-                </div>
-                <div class="slide fade">
-                    <img src="images/photo9.jpeg" alt="Photo 9">
+                <div class="slideshow-container">
+                    <div class="slide fade">
+                        <img src="images/photo7.jpeg" alt="Photo 7">
+                    </div>
+                    <div class="slide fade">
+                        <img src="images/photo8.jpeg" alt="Photo 8">
+                    </div>
+                    <div class="slide fade">
+                        <img src="images/photo9.jpeg" alt="Photo 9">
+                    </div>
+                    <div class="dot-container">
+                        <span class="dot" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -94,33 +83,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        function setupSlideshow(slideshowContainer) {
-            let slides = slideshowContainer.getElementsByClassName("slide");
-            let slideIndex = 0;
-
-            function showSlides() {
-                for (let i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {
-                    slideIndex = 1;
-                }
-                slides[slideIndex - 1].style.display = "block";
-                setTimeout(showSlides, 3000);
-            }
-
-            slides[0].style.display = "block";
-            showSlides();
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            let slideshows = document.getElementsByClassName("slideshow-container");
-            for (let i = 0; i < slideshows.length; i++) {
-                setupSlideshow(slideshows[i]);
-            }
-        });
-    </script>
 </body>
 </html>

@@ -189,54 +189,50 @@ body.publications-page main h4 {
     }
 }
 
+/* Slideshow Wrapper */
+.slideshow-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 100%; /* Make it take the full width */
-    margin: auto;
+    max-width: 45%; /* Two per row on desktop */
+    margin: 0 auto;
     overflow: hidden;
 }
 
-/* Slides */
 .slide {
     display: none;
-    position: absolute; /* Stack slides on top of each other */
-    width: 100%; /* Ensure full-width images */
+    width: 100%;
     text-align: center;
-    opacity: 0; /* Initially hide the slides */
-    transition: opacity 1s ease-in-out; /* Smooth transition */
 }
 
 .slide img {
     width: 100%;
     height: auto;
-    max-height: 600px; /* Adjust image height */
+    max-height: 400px; /* Balanced height */
+    border-radius: 10px;
+}
+
+.slide.active {
+    display: block;
 }
 
 /* Fade Animation */
 .fade {
-    animation: fadeEffect 1.5s ease-in-out; /* Reduce animation time */
+    animation: fadeEffect 1.5s ease-in-out;
 }
 
-/* Keyframes for Fade Effect */
 @keyframes fadeEffect {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Images */
-.slideshow-container img {
-    width: 100%; /* Make images responsive */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 700px; /* Increase max height for larger display */
-    border-radius: 10px; /* Optional: Add rounded corners */
-}
-
-/* Optional: Add navigation dots */
+/* Navigation Dots */
 .dot-container {
     text-align: center;
     margin-top: 10px;
@@ -250,6 +246,7 @@ body.publications-page main h4 {
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .dot.active {

@@ -1,6 +1,6 @@
-// script.js 可以留空，或者添加其他功能
-// 例如，高亮当前页面导航（可选）
+// script.js
 document.addEventListener('DOMContentLoaded', () => {
+    // Highlight current page navigation
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav a').forEach(link => {
         if (link.getAttribute('href') === currentPage) {
@@ -9,33 +9,53 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Setup each slideshow
     function setupSlideshow(slideshowContainer) {
-        let slides = slideshowContainer.getElementsByClassName("slide");
+        let slides = slideshowContainer.getElementsByClassName('slide');
+        let dots = slideshowContainer.getElementsByClassName('dot');
         let slideIndex = 0;
-    
+        let timeoutId;
+
         function showSlides() {
-            // Hide all slides
+            // Hide all slides and deactivate dots
             for (let i = 0; i < slides.length; i++) {
-                slides[i].style.opacity = "0";
+                slides[i].classList.remove('active');
+                dots[i].classList.remove('active');
             }
+
             slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
             }
-    
-            // Show the current slide
-            slides[slideIndex - 1].style.opacity = "1";
-            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+
+            // Show current slide and activate dot
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+            timeoutId = setTimeout(showSlides, 3000); // Change every 3 seconds
         }
-    
-        slides[0].style.opacity = "1"; // Ensure the first slide is visible initially
+
+        // Manual dot navigation
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].addEventListener('click', () => {
+                clearTimeout(timeoutId);
+                slideIndex = parseInt(dots[i].getAttribute('data-slide')) - 1;
+                showSlides();
+            });
+        }
+
+        // Start with first slide
+        slides[0].classList.add('active');
+        dots[0].classList.add('active');
         showSlides();
+
+        // Pause on hover
+        slideshowContainer.addEventListener('mouseenter', () => clearTimeout(timeoutId));
+        slideshowContainer.addEventListener('mouseleave', () => showSlides());
     }
-    
-    document.addEventListener("DOMContentLoaded", function () {
-        let slideshows = document.getElementsByClassName("slideshow-container");
-        for (let i = 0; i < slideshows.length; i++) {
-            setupSlideshow(slideshows[i]);
-        }
-    });
+
+    // Initialize all slideshows
+    let slideshows = document.getElementsByClassName('slideshow-container');
+    for (let i = 0; i < slideshows.length; i++) {
+        setupSlideshow(slideshows[i]);
+    }
 });
