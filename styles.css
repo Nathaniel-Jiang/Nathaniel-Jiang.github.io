@@ -301,12 +301,18 @@ body.photograph-page main {
 
 /* Text styling */
 .image-text-container .text {
-    flex: 0 0 300px; /* Fixed width for the text container (300px) */
+    position: absolute; /* Position the text over the image */
+    right: 20px; /* Position the text 20px from the right edge */
+    top: 50%; /* Center the text vertically */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent background */
+    padding: 10px 15px; /* Add padding around the text */
+    border-radius: 5px; /* Optional: Add rounded corners */
     font-size: 1.2rem;
     color: #333;
     line-height: 1.6;
+    max-width: 300px; /* Limit the width of the text box */
     text-align: left; /* Align text to the left */
-    padding: 10px; /* Optional: Add padding inside the text box */
 }
 
 /* Adjust spacing for <h2> and <p> in cv.html */
