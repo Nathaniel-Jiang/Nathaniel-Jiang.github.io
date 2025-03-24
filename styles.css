@@ -180,10 +180,14 @@ section p {
     display: flex;
     justify-content: center;
     margin-top: 30px; /* Add spacing above the PDF */
+    width: 100%; /* Ensure the container takes the full width of the page */
+    max-width: 1400px; /* Set a maximum width for larger screens */
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
 }
 
 .cv-iframe-container iframe {
-    width: 90%; /* Adjust the width to make it wider (e.g., 90% of the container) */
+    width: 80%; /* Adjust the width to make it wider (e.g., 80% of the container) */
     max-width: 1200px; /* Set a maximum width for larger screens */
     height: 80vh; /* Set the height to 80% of the viewport height */
     border: none; /* Remove the border */
