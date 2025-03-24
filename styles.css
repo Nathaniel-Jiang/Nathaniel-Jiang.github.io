@@ -189,136 +189,94 @@ body.publications-page main h4 {
     }
 }
 
-/* Photograph section */
-/* Reset parent container spacing */
+/* PHOTOGRAPH PAGE SPECIFIC */
 body.photograph-page main {
     margin: 0;
     padding: 0;
-}
-
-/* Slideshow Wrapper */
-.slideshow-wrapper {
+  }
+  
+  /* SLIDESHOW WRAPPER */
+  .slideshow-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 50px;
     align-items: center;
+    gap: 50px;
     width: 100%;
-}
-
-/* Add space above first slideshow */
-.slideshow-wrapper .slideshow-container:first-of-type {
-    margin-top: 50px;
-}
-
-/* Slideshow Container */
-.slideshow-container {
+    margin-top: 60px;
+  }
+  
+  .slideshow-group {
+    width: 100%;
+    max-width: 1400px;
+  }
+  
+  /* SLIDESHOW CONTAINER */
+  .slideshow-container {
     position: relative;
-    width: 100%; /* Full width */
-    max-width: 1400px; /* Maximum width for larger screens */
-    height: 80vh; /* Set height to fit within the viewport */
-    margin: 0 auto; /* Center the container horizontally */
-    overflow: hidden; /* Hide any overflow */
-    display: flex; /* Use flexbox to align image and text side by side */
-    align-items: center; /* Vertically align the image and text */
-    gap: 20px; /* Add space between the image and text */
-}
-
-/* Navigation Dots */
-.dot-container {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .slides,
+  .slide {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* SLIDES */
+  .slide {
+    display: none; /* hidden by default */
+    position: relative;
+  }
+  
+  .slide.active {
+    display: block; /* show active slide */
+  }
+  
+  /* SLIDE IMAGE */
+  .slide img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+  }
+  
+  /* DESCRIPTION */
+  .description {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* DOT CONTAINER */
+  .dot-container {
     position: absolute;
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0,0,0,0.5);
     padding: 5px 15px;
     border-radius: 15px;
-    z-index: 10; /* Ensure dots are above description */
-}
-
-.dot {
+  }
+  
+  .dot {
     width: 15px;
     height: 15px;
     background: #bbb;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
+    transition: background-color 0.3s;
+  }
+  
+  .dot.active {
     background: #fff;
-}
-
-/* Slides */
-.slide {
-    display: none;
-    width: 100%;
-    height: 100%;
-    position: relative; /* For positioning description */
-}
-
-/* Make slide visible when active */
-.slide.active {
-    display: block;
-}
-
-/* Center images within slides */
-.slide img {
-    width: 100%;
-    height: auto;
-    max-height: 80vh; /* Match container height */
-    object-fit: contain; /* Maintain aspect ratio, show entire image */
-    display: block;
-}
-
-/* Description Styling */
-.slide .description {
-    position: absolute;
-    top: 50%;
-    left: calc(60% + 20px);
-    transform: translateY(-50%);
-    font-size: 3rem; /* Increased to 40px */
-    color: #fff;
-    line-height: 1.6;
-    text-align: left;
-    max-width: 30%;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    z-index: 5;
-}
-
-/* Fade Animation */
-.fade {
-    animation: fadeEffect 0.5s ease-in-out;
-}
-
-@keyframes fadeEffect {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .slideshow-container {
-        max-height: 60vh; /* Smaller height on mobile */
-    }
-
-    .slide img {
-        max-height: 60vh;
-    }
-
-    .slide .description {
-        position: static; /* Remove absolute positioning */
-        transform: none; /* Remove centering */
-        width: 100%;
-        max-width: 100%;
-        font-size: 1rem;
-        padding: 10px;
-        background: rgba(0, 0, 0, 0.8); /* Slightly darker for readability */
-    }
-}
+  }
+  
 
 
 /* Adjust spacing for <h2> and <p> in cv.html */
