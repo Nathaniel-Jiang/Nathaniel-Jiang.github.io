@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
             this.descriptionElement = descriptionElement;
             this.slidesData = JSON.parse(container.dataset.slides);
             this.currentIndex = 0;
-            this.allSlideshows = allSlideshows; // Reference to all slideshows
-            this.isActive = false; // Track if this slideshow is active
+            this.allSlideshows = allSlideshows;
+            this.isActive = false;
             this.init();
         }
 
@@ -51,45 +51,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setupEventListeners() {
-            // Dot navigation
             this.dots.forEach(dot => {
                 dot.addEventListener('click', () => {
                     this.currentIndex = parseInt(dot.dataset.slide);
                     this.showSlide();
-                    this.resetOtherSlideshows(); // Reset other slideshows
+                    this.resetOtherSlideshows();
                 });
             });
 
-            // Left and right button navigation
             this.leftButton.addEventListener('click', () => {
                 this.prevSlide();
-                this.resetOtherSlideshows(); // Reset other slideshows
+                this.resetOtherSlideshows();
             });
             this.rightButton.addEventListener('click', () => {
                 this.nextSlide();
-                this.resetOtherSlideshows(); // Reset other slideshows
+                this.resetOtherSlideshows();
             });
 
-            // Activate slideshow on hover
             this.container.addEventListener('mouseenter', () => {
-                this.isActive = true; // Mark this slideshow as active
+                this.isActive = true;
                 this.container.querySelector('.navigation').style.opacity = '1';
             });
             this.container.addEventListener('mouseleave', () => {
-                this.isActive = false; // Mark this slideshow as inactive
+                this.isActive = false;
                 this.container.querySelector('.navigation').style.opacity = '0';
             });
 
-            // Keyboard navigation
             document.addEventListener('keydown', (e) => {
-                if (this.isActive) { // Only allow navigation for the active slideshow
+                if (this.isActive) {
                     if (e.key === 'ArrowLeft') {
                         this.prevSlide();
-                        this.resetOtherSlideshows(); // Reset other slideshows
+                        this.resetOtherSlideshows();
                     }
                     if (e.key === 'ArrowRight') {
                         this.nextSlide();
-                        this.resetOtherSlideshows(); // Reset other slideshows
+                        this.resetOtherSlideshows();
                     }
                 }
             });
@@ -100,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 slide.classList.toggle('active', index === this.currentIndex);
                 this.dots[index].classList.toggle('active', index === this.currentIndex);
             });
-            // Update description
             this.descriptionElement.textContent = this.slidesData[this.currentIndex].desc;
         }
 
@@ -115,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         resetOtherSlideshows() {
-            // Reset all other slideshows to their first slide
             this.allSlideshows.forEach(slideshow => {
                 if (slideshow !== this) {
                     slideshow.currentIndex = 0;
@@ -127,12 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize slideshows with their corresponding description elements
     const slideshowGroups = document.querySelectorAll('.slideshow-group');
-    const allSlideshows = []; // Store references to all slideshows
+    const allSlideshows = [];
 
     slideshowGroups.forEach((group, index) => {
         const container = group.querySelector('.slideshow-container');
         const description = group.querySelector(`#desc-${index + 1}`);
         const slideshow = new Slideshow(container, description, allSlideshows);
-        allSlideshows.push(slideshow); // Add to the list of all slideshows
+        allSlideshows.push(slideshow);
     });
 });

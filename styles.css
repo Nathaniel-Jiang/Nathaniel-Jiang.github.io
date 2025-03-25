@@ -102,102 +102,129 @@ section p {
     margin: 0 auto;
 }
 
-
 /* Research Section */
-/* Adjust spacing for <h2> and <p> in research.html */
-body.research-page main h2 {
-    margin: 0 !important; /* Reset all margins */
-    margin-top: -20px !important; /* Add the desired space above the <h2> */
+/* Research Page Specifics */
+.research-page main {
+    margin-top: 20px; /* Space for fixed header */
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-body.research-page main p {
-    margin: 0 !important; /* Reset all margins */
-    margin-top: 5px !important; /* Add the desired space above the <p> */
+.research-page section {
+    margin-bottom: 3rem;
 }
 
+.research-page h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #222;
+    margin-top: -15px; /* Adjust this value as needed */
+    margin-bottom: 1.5rem;
+}
+
+/* First Section Paragraphs */
+.research-page section:first-of-type p {
+    text-align: left;
+    max-width: 800px;
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6; /* Increased for readability */
+    margin-bottom: 1rem; /* Adjusted spacing between paragraphs */
+    text-indent: 0.4in; /* Optional: Indent the first line of each paragraph */
+}
+
+/* Adjust spacing for the first and second sections */
+.research-page section:first-of-type {
+    margin-bottom: 0rem; /* Add space below the first section */
+}
+
+.research-page section:nth-of-type(2) {
+    margin-top: -3rem; /* Add space above the second section */
+}
+
+/* Research Container */
 .research {
-    margin-top: 35px;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 1.5rem;
     text-align: left;
     list-style: none;
-    margin-left: 40px; /* Added fixed margin from the left */
 }
 
-body.research-page main section:first-of-type p {
-    text-align: left;
-    max-width: 1000px; /* Adjust the width as needed */
-    word-wrap: break-word;
-    margin-bottom: 10px; /* Adjust this value to increase or decrease spacing */
-    line-height: 1.6; /* Adjust this value for readability */
-}
-
-/* Ensure the year and text content are aligned properly */
-.research h3, .research h4 {
-    font-size: 1.2rem;
-    color: #000;
-    line-height: 2.0;
-    margin-bottom: 20px;
-    text-align: left;
-    text-shadow: none;
-    margin-left: 40px; /* Fixed margin from the left for consistency */
-    word-wrap: break-word; /* 强制单词内换行 */
-    white-space: normal;   /* 允许换行，默认值，可明确指定 */
-    max-width: 800px;      /* 限制标题宽度，与正文接近 */
-}
-
-/* Research project Alignment */
+/* Research Project */
 .research-project {
     display: flex;
     align-items: flex-start;
-    gap: 50px; /* Space between project and content */
-    text-align: left;
-    margin-left: 0 !important; /* Remove extra space on the left */
-    padding-left: 0; /* Ensure no padding is added */
+    gap: 2rem; /* Reduced from 50px for a tighter, modern look */
+    margin-bottom: 1.5rem;
 }
 
-/* Ensure uniform alignment for the project */
 .research-project h3 {
-    width: auto; /* Remove fixed width */
-    min-width: 0; /* Allow flexibility */
-    padding-left: 0; /* Remove extra padding */
-    margin-left: 0; /* Ensure no additional left margin */
-    text-align: left; /* Keep text aligned to the left */
+    font-size: 1.2rem;
+    color: #222;
+    line-height: 1.6;
+    margin-bottom: 0rem; /* Adjusted spacing below h3 */
+    text-align: left;
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 800px;
 }
 
-/* If there are multiple h4 tags for sub-publications, ensure consistency */
 .research-project h4 {
     font-size: 1.2rem;
-    color: #000;
-    margin-bottom: 5px;
-    max-width: 800px; /* Adjust the width as needed */
-    word-wrap: break-word; /* Break long words if necessary */
-    white-space: normal; /* Allow text to wrap to the next line */
-    line-height: 1.6; /* Improve readability with proper line spacing */
+    color: #222;
+    line-height: 1.6;
+    margin-top: 3rem; /* Adjusted spacing above h4 */
+    margin-bottom: 1rem; /* Optional: Add spacing below h4 */
+    text-align: left;
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 900px;
 }
 
-/* Responsive Design for Publications */
+.research-project p {
+    font-size: 1.2rem;
+    color: #222;
+    line-height: 1.6;
+    margin-top: 0rem; /* Adjusted spacing above h4 */
+    margin-bottom: 0.5rem; /* Optional: Add spacing below h4 */
+    margin-left: 0; /* Removes any left margin */
+    text-align: left;
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 800px;
+    text-indent: 0.4in; /* Optional: Indent the first line of each paragraph */
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    .research-page main {
+        padding: 1rem;
+    }
+
+    .research-page h2 {
+        font-size: 1.75rem;
+    }
+
+    .research-page section:first-of-type p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .research {
+        padding: 1rem;
+    }
+
     .research-project {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 1rem;
     }
 
-    .research-project h3 {
-        width: auto;
-        text-align: left;
-    }
-
-    .research-project h4 {
-        max-width: 100%; /* Allow full width on smaller screens */
-        font-size: 1rem; /* Adjust font size for readability */
-    }
-
-    .research p {
+    .research h3, .research h4, .research-project h4 {
         font-size: 1rem;
+        max-width: 100%;
     }
 }
-
 
 /* Publication Section */
 /* Adjust spacing for <h2> and <p> in publications.html */
@@ -286,8 +313,6 @@ body.publications-page main h4 {
     }
 }
 
-
-
 /* Photograph section */
 /* Reset parent container spacing */
 body.photograph-page main {
@@ -370,7 +395,6 @@ body.photograph-page main {
     object-fit: contain; /* Maintain aspect ratio, show entire image */
     display: block;
 }
-
 
 /* Description Styling */
 .slide .description {
@@ -461,7 +485,6 @@ body.photograph-page main {
 .slideshow-container:hover .navigation {
     opacity: 1;
 }
-
 
 /* CV Section */
 /* Adjust spacing for <h2> and <p> in cv.html */
