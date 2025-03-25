@@ -102,8 +102,31 @@ section p {
     margin: 0 auto;
 }
 
+
+/* Research Section */
+/* Adjust spacing for <h2> and <p> in research.html */
+body.research-page main h2 {
+    margin: 0 !important; /* Reset all margins */
+    margin-top: 100px !important; /* Add the desired space above the <h2> */
+}
+
+body.research-page main p {
+    margin: 0 !important; /* Reset all margins */
+    margin-top: 5px !important; /* Add the desired space above the <p> */
+}
+
+
+
+
+
+
+
+
+
+
+
 /* Publication Section */
-/* Adjust spacing for <h2> and <p> in cv.html */
+/* Adjust spacing for <h2> and <p> in publications.html */
 body.publications-page main h3 {
     margin: 0 !important; /* Reset all margins */
     margin-top: 30px !important; /* Add the desired space above the <h3> */
@@ -364,6 +387,7 @@ body.photograph-page main {
 }
 
 
+/* CV Section */
 /* Adjust spacing for <h2> and <p> in cv.html */
 body.cv-page main h2 {
     margin: 0 !important; /* Reset all margins */
