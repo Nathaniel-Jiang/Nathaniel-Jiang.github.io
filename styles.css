@@ -107,7 +107,7 @@ section p {
 /* Adjust spacing for <h2> and <p> in research.html */
 body.research-page main h2 {
     margin: 0 !important; /* Reset all margins */
-    margin-top: 100px !important; /* Add the desired space above the <h2> */
+    margin-top: -20px !important; /* Add the desired space above the <h2> */
 }
 
 body.research-page main p {
@@ -115,14 +115,80 @@ body.research-page main p {
     margin-top: 5px !important; /* Add the desired space above the <p> */
 }
 
+.research {
+    margin-top: 35px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    list-style: none;
+    margin-left: 40px; /* Added fixed margin from the left */
+}
 
+/* Ensure the year and text content are aligned properly */
+.research h3, .research h4 {
+    font-size: 1.2rem;
+    color: #000;
+    line-height: 2.0;
+    margin-bottom: 20px;
+    text-align: left;
+    text-shadow: none;
+    margin-left: 40px; /* Fixed margin from the left for consistency */
+    word-wrap: break-word; /* 强制单词内换行 */
+    white-space: normal;   /* 允许换行，默认值，可明确指定 */
+    max-width: 800px;      /* 限制标题宽度，与正文接近 */
+}
 
+/* Research project Alignment */
+.research-project {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px; /* Space between project and content */
+    text-align: left;
+    margin-left: 0 !important; /* Remove extra space on the left */
+    padding-left: 0; /* Ensure no padding is added */
+}
 
+/* Ensure uniform alignment for the project */
+.research-project h3 {
+    width: auto; /* Remove fixed width */
+    min-width: 0; /* Allow flexibility */
+    padding-left: 0; /* Remove extra padding */
+    margin-left: 0; /* Ensure no additional left margin */
+    text-align: left; /* Keep text aligned to the left */
+}
 
+/* If there are multiple h4 tags for sub-publications, ensure consistency */
+.research-project h4 {
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 5px;
+    max-width: 800px; /* Adjust the width as needed */
+    word-wrap: break-word; /* Break long words if necessary */
+    white-space: normal; /* Allow text to wrap to the next line */
+    line-height: 1.6; /* Improve readability with proper line spacing */
+}
 
+/* Responsive Design for Publications */
+@media (max-width: 768px) {
+    .research-project {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .research-project h3 {
+        width: auto;
+        text-align: left;
+    }
 
+    .research-project h4 {
+        max-width: 100%; /* Allow full width on smaller screens */
+        font-size: 1rem; /* Adjust font size for readability */
+    }
 
+    .research p {
+        font-size: 1rem;
+    }
+}
 
 
 /* Publication Section */
@@ -211,6 +277,8 @@ body.publications-page main h4 {
         font-size: 1rem;
     }
 }
+
+
 
 /* Photograph section */
 /* Reset parent container spacing */
