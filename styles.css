@@ -527,6 +527,26 @@ body.cv-page main section {
     border: none; /* Remove the border */
 }
 
+
+/* Contact Logos */
+.contact-logos {
+    display: flex;
+    gap: 1rem; /* Space between logos */
+    justify-content: center; /* Center the logos */
+    margin-top: 1rem;
+}
+
+.contact-logo {
+    width: 50px; /* Set a fixed width for logos */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Add a hover effect */
+}
+
+.contact-logo:hover {
+    transform: scale(1.1); /* Slightly enlarge the logo on hover */
+}
+
+
 /* Footer */
 footer {
     position: relative;

@@ -1,22 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Highlight current page
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
-    });
+    // Utility function for active page highlighting
+    const highlightCurrentPage = () => {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('nav a').forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === currentPage);
+        });
+    };
 
-    // Slideshow class with external description handling
+    // Enhanced Slideshow class with improved performance and error handling
     class Slideshow {
         constructor(container, descriptionElement, allSlideshows) {
-            this.container = container;
-            this.descriptionElement = descriptionElement;
-            this.slidesData = JSON.parse(container.dataset.slides);
-            this.currentIndex = 0;
-            this.allSlideshows = allSlideshows;
-            this.isActive = false;
-            this.init();
+            try {
+                this.container = container;
+                this.descriptionElement = descriptionElement;
+                this.slidesData = JSON.parse(container.dataset.slides || '[]');
+                this.currentIndex = 0;
+                this.allSlideshows = allSlideshows;
+                this.isActive = false;
+
+                if (this.slidesData.length === 0) {
+                    console.warn('No slides data found for slideshow');
+                    return;
+                }
+
+                this.init();
+            } catch (error) {
+                console.error('Slideshow initialization error:', error);
+            }
         }
 
         init() {
@@ -26,24 +36,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         renderSlides() {
-            this.container.innerHTML = `
-                <div class="slides">
-                    ${this.slidesData.map((slide, index) => `
-                        <div class="slide fade ${index === 0 ? 'active' : ''}">
-                            <img src="${slide.src}" alt="${slide.alt}" loading="lazy">
-                        </div>
-                    `).join('')}
-                </div>
-                <div class="dot-container">
-                    ${this.slidesData.map((_, index) => `
-                        <span class="dot ${index === 0 ? 'active' : ''}" data-slide="${index}"></span>
-                    `).join('')}
-                </div>
-                <div class="navigation">
-                    <button class="nav-button left">❮</button>
-                    <button class="nav-button right">❯</button>
-                </div>
+            // Use document fragment for more efficient DOM manipulation
+            const fragment = document.createDocumentFragment();
+            const slidesContainer = document.createElement('div');
+            slidesContainer.className = 'slides';
+
+            this.slidesData.forEach((slide, index) => {
+                const slideElement = document.createElement('div');
+                slideElement.className = `slide fade ${index === 0 ? 'active' : ''}`;
+                
+                const img = document.createElement('img');
+                img.src = slide.src;
+                img.alt = slide.alt;
+                img.loading = 'lazy';
+                
+                slideElement.appendChild(img);
+                slidesContainer.appendChild(slideElement);
+            });
+
+            const dotContainer = document.createElement('div');
+            dotContainer.className = 'dot-container';
+            
+            this.slidesData.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.className = `dot ${index === 0 ? 'active' : ''}`;
+                dot.dataset.slide = index;
+                dotContainer.appendChild(dot);
+            });
+
+            const navigation = document.createElement('div');
+            navigation.className = 'navigation';
+            navigation.innerHTML = `
+                <button class="nav-button left">❮</button>
+                <button class="nav-button right">❯</button>
             `;
+
+            fragment.appendChild(slidesContainer);
+            fragment.appendChild(dotContainer);
+            fragment.appendChild(navigation);
+
+            this.container.innerHTML = '';
+            this.container.appendChild(fragment);
+
             this.slides = this.container.querySelectorAll('.slide');
             this.dots = this.container.querySelectorAll('.dot');
             this.leftButton = this.container.querySelector('.nav-button.left');
@@ -51,44 +85,62 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setupEventListeners() {
+            const debouncedResetSlideshows = this.debounce(this.resetOtherSlideshows.bind(this), 200);
+
             this.dots.forEach(dot => {
                 dot.addEventListener('click', () => {
                     this.currentIndex = parseInt(dot.dataset.slide);
                     this.showSlide();
-                    this.resetOtherSlideshows();
+                    debouncedResetSlideshows();
                 });
             });
 
             this.leftButton.addEventListener('click', () => {
                 this.prevSlide();
-                this.resetOtherSlideshows();
+                debouncedResetSlideshows();
             });
+
             this.rightButton.addEventListener('click', () => {
                 this.nextSlide();
-                this.resetOtherSlideshows();
+                debouncedResetSlideshows();
             });
 
             this.container.addEventListener('mouseenter', () => {
                 this.isActive = true;
                 this.container.querySelector('.navigation').style.opacity = '1';
             });
+
             this.container.addEventListener('mouseleave', () => {
                 this.isActive = false;
                 this.container.querySelector('.navigation').style.opacity = '0';
             });
 
+            // Delegated keyboard event listener
             document.addEventListener('keydown', (e) => {
                 if (this.isActive) {
-                    if (e.key === 'ArrowLeft') {
-                        this.prevSlide();
-                        this.resetOtherSlideshows();
-                    }
-                    if (e.key === 'ArrowRight') {
-                        this.nextSlide();
-                        this.resetOtherSlideshows();
+                    switch(e.key) {
+                        case 'ArrowLeft':
+                            this.prevSlide();
+                            debouncedResetSlideshows();
+                            break;
+                        case 'ArrowRight':
+                            this.nextSlide();
+                            debouncedResetSlideshows();
+                            break;
                     }
                 }
             });
+        }
+
+        // Debounce utility method
+        debounce(func, delay) {
+            let timeoutId;
+            return function() {
+                const context = this;
+                const args = arguments;
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => func.apply(context, args), delay);
+            };
         }
 
         showSlide() {
@@ -119,14 +171,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Initialize slideshows with their corresponding description elements
-    const slideshowGroups = document.querySelectorAll('.slideshow-group');
-    const allSlideshows = [];
+    // Main initialization function
+    const initSlideshows = () => {
+        const slideshowGroups = document.querySelectorAll('.slideshow-group');
+        const allSlideshows = [];
 
-    slideshowGroups.forEach((group, index) => {
-        const container = group.querySelector('.slideshow-container');
-        const description = group.querySelector(`#desc-${index + 1}`);
-        const slideshow = new Slideshow(container, description, allSlideshows);
-        allSlideshows.push(slideshow);
-    });
+        slideshowGroups.forEach((group, index) => {
+            const container = group.querySelector('.slideshow-container');
+            const description = group.querySelector(`#desc-${index + 1}`);
+            
+            if (container && description) {
+                const slideshow = new Slideshow(container, description, allSlideshows);
+                allSlideshows.push(slideshow);
+            }
+        });
+    };
+
+    // Initialize everything
+    highlightCurrentPage();
+    initSlideshows();
 });
