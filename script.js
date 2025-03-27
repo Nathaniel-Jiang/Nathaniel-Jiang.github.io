@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const navigation = document.createElement('div');
             navigation.className = 'navigation';
             navigation.innerHTML = `
-                <button class="nav-button left">❮</button>
-                <button class="nav-button right">❯</button>
+                <button class="nav-button left" aria-label="Previous Slide">❮</button>
+                <button class="nav-button right" aria-label="Next Slide">❯</button>
             `;
 
             fragment.appendChild(slidesContainer);
@@ -82,11 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
             this.dots = this.container.querySelectorAll('.dot');
             this.leftButton = this.container.querySelector('.nav-button.left');
             this.rightButton = this.container.querySelector('.nav-button.right');
+            this.navigationElement = this.container.querySelector('.navigation');
         }
 
         setupEventListeners() {
             const debouncedResetSlideshows = this.debounce(this.resetOtherSlideshows.bind(this), 200);
 
+            // Dot navigation
             this.dots.forEach(dot => {
                 dot.addEventListener('click', () => {
                     this.currentIndex = parseInt(dot.dataset.slide);
@@ -95,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
+            // Left and Right button navigation
             this.leftButton.addEventListener('click', () => {
                 this.prevSlide();
                 debouncedResetSlideshows();
@@ -105,17 +108,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 debouncedResetSlideshows();
             });
 
+            // Hover effects for navigation
             this.container.addEventListener('mouseenter', () => {
                 this.isActive = true;
-                this.container.querySelector('.navigation').style.opacity = '1';
+                this.showNavigation();
             });
 
             this.container.addEventListener('mouseleave', () => {
                 this.isActive = false;
-                this.container.querySelector('.navigation').style.opacity = '0';
+                this.hideNavigation();
             });
 
-            // Delegated keyboard event listener
+            // Keyboard navigation
             document.addEventListener('keydown', (e) => {
                 if (this.isActive) {
                     switch(e.key) {
@@ -130,6 +134,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             });
+        }
+
+        // Show navigation with opacity transition
+        showNavigation() {
+            if (this.navigationElement) {
+                this.navigationElement.style.opacity = '1';
+                this.navigationElement.style.visibility = 'visible';
+            }
+        }
+
+        // Hide navigation with opacity transition
+        hideNavigation() {
+            if (this.navigationElement) {
+                this.navigationElement.style.opacity = '0';
+                this.navigationElement.style.visibility = 'hidden';
+            }
         }
 
         // Debounce utility method

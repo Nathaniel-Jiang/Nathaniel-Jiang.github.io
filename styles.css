@@ -452,24 +452,33 @@ body.photograph-page main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    opacity: 0; /* Hidden by default */
+    opacity: 0; /* Start fully transparent */
     transition: opacity 0.3s ease;
-    pointer-events: none; /* Prevent interaction when hidden */
+    z-index: 10;
+    transform: translateY(-50%); /* Ensures vertical centering */
 }
 
 .nav-button {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    font-size: 2rem;
+    padding: 10px 15px;
+    font-size: 1.5rem;
     cursor: pointer;
-    pointer-events: auto; /* Enable interaction */
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    user-select: none;
+    transition: 
+        background-color 0.3s ease,
+        transform 0.2s ease;
 }
 
 .nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.nav-button:active {
+    transform: scale(0.95); /* Subtle press effect */
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -481,10 +490,40 @@ body.photograph-page main {
     margin-right: 10px;
 }
 
-/* Show navigation buttons on hover */
+/* Always visible navigation for better accessibility */
 .slideshow-container:hover .navigation {
     opacity: 1;
 }
+
+/* Accessibility improvements */
+.nav-button:focus {
+    outline: 2px solid #2575fc; /* Focus state for keyboard navigation */
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%); /* Ensure vertical centering */
+    }
+
+    .nav-button {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+    }
+
+    .nav-button.left {
+        margin-left: 5px;
+    }
+
+    .nav-button.right {
+        margin-right: 5px;
+    }
+}
+
 
 /* CV Section */
 /* Adjust spacing for <h2> and <p> in cv.html */
