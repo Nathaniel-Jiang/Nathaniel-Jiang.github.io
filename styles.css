@@ -568,21 +568,80 @@ body.cv-page main section {
 
 
 /* Contact Logos */
-.contact-logos {
+/* Existing styles from previous pages */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 15px 20px;
+    z-index: 1000;
+}
+
+header nav {
     display: flex;
-    gap: 1rem; /* Space between logos */
-    justify-content: center; /* Center the logos */
-    margin-top: 1rem;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.contact-logo {
-    width: 50px; /* Set a fixed width for logos */
-    height: auto; /* Maintain aspect ratio */
-    transition: transform 0.3s ease; /* Add a hover effect */
+header nav a {
+    color: #000;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
 }
 
-.contact-logo:hover {
-    transform: scale(1.1); /* Slightly enlarge the logo on hover */
+/* Contact Page Specific Styles */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+    margin-top: 80px;
+}
+
+.email-logo {
+    width: 300px;  /* Increased width */
+    height: 300px;  /* Increased height */
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    border-radius: 50%;  /* Optional: makes it circular */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);  /* Optional: adds subtle shadow */
+}
+
+.email-logo:hover {
+    transform: scale(1.1);  /* Slightly larger on hover */
+    background-color: rgba(0,0,0,0.05);  /* Optional: light background on hover */
+}
+
+.email-logo img {
+    width: 200px;  /* Larger image size */
+    height: 200px;  /* Larger image size */
+    object-fit: contain;  /* Ensures image maintains aspect ratio */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .email-logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .email-logo img {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 
@@ -634,3 +693,4 @@ footer {
         font-size: 1rem;
     }
 }
+
