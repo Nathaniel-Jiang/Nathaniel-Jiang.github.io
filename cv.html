@@ -3,10 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CV of Peng (Nathaniel) Jiang.">
-    <meta name="author" content="Peng (Nathaniel) Jiang">
     <title>Nathaniel Jiang - CV</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Critical CSS Inlined -->
+    <style>
+        /* Critical header and navigation styles */
+        body,html{margin:0;padding:0;font-family:'Times New Roman',sans-serif}
+        header{position:fixed;top:0;left:0;width:100%;background-color:#ADD8E6;padding:15px 20px;z-index:1000}
+        header nav{display:flex;justify-content:space-around;align-items:center}
+        header nav a{color:#000;text-decoration:none;padding:10px 20px;font-size:1.2rem}
+        
+        /* Critical CV page styles */
+        .cv-page main{margin-top:80px;padding:20px}
+        .cv-iframe-container{display:flex;justify-content:center;width:100%;max-width:1400px;margin:0 auto}
+        .cv-iframe-container iframe{width:80%;max-width:1200px;height:80vh;border:none}
+    </style>
+
+    <!-- Async loading of full stylesheet -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+    <!-- Preconnect to Google Domains -->
+    <link rel="preconnect" href="https://drive.google.com" crossorigin>
+
+    <!-- Optimize Google Drive PDF Preview -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 </head>
 <body class="cv-page">
     <header>
@@ -23,9 +44,20 @@
     <main>
         <section>
             <h2>Curriculum Vitae</h2>
-            <p>You can view my CV directly below or <a href="https://drive.google.com/file/d/1HdjxAhrOhAdTAVQCcO33e9IUFcIYoZhB/view?usp=share_link" target="_blank">download it here</a>.</p>
+            <p>
+                You can view my CV directly below or 
+                <a href="https://drive.google.com/file/d/1HdjxAhrOhAdTAVQCcO33e9IUFcIYoZhB/view?usp=share_link" 
+                   target="_blank" 
+                   rel="noopener noreferrer">download it here</a>.
+            </p>
             <div class="cv-iframe-container">
-                <iframe src="https://drive.google.com/file/d/1HdjxAhrOhAdTAVQCcO33e9IUFcIYoZhB/preview"></iframe>
+                <iframe 
+                    src="https://drive.google.com/file/d/1HdjxAhrOhAdTAVQCcO33e9IUFcIYoZhB/preview" 
+                    title="Nathaniel Jiang's Curriculum Vitae" 
+                    aria-label="CV Embedded View"
+                    loading="lazy"
+                    sandbox="allow-scripts allow-same-origin"
+                ></iframe>
             </div>
         </section>
     </main>
@@ -34,6 +66,7 @@
         <p>© Peng (Nathaniel) Jiang, March 2025. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Defer script loading -->
+    <script src="script.js" defer></script>
 </body>
 </html>
