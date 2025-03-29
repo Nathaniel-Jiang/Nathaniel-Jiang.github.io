@@ -34,6 +34,13 @@ header nav a {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Active link style - subtle blue text to indicate current page */
+header nav a.active, header nav a[aria-current="page"] {
+    background-color: #fff;
+    color: #2575fc;
+}
+
+/* Hover effect applies to all links including the active one */
 header nav a:hover {
     background-color: #fff;
     color: #2575fc;
@@ -580,7 +587,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent;
+    background-color: #ADD8E6;
     padding: 15px 20px;
     z-index: 1000;
 }
@@ -610,7 +617,7 @@ header nav a {
 .email-logo {
     width: 300px;  /* Increased width */
     height: 300px;  /* Increased height */
-    background-color: transparent;
+    background-color: #ADD8E6;
     display: flex;
     justify-content: center;
     align-items: center;
