@@ -203,6 +203,35 @@ section p {
     text-indent: 0.4in; /* Optional: Indent the first line of each paragraph */
 }
 
+/* Add this to your styles.css file */
+.research-page .slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust based on your content width */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .research-page .navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    left: 0; /* Ensure alignment starts from the left edge */
+    right: 0; /* Ensure alignment extends to right edge */
+    z-index: 10;
+  }
+  
+  .research-page .nav-button.right {
+    margin-right: 10px;
+  }
+  
+  .research-page .nav-button.left {
+    margin-left: 10px;
+  }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .research-page main {
