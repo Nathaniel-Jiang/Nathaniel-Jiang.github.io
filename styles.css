@@ -175,11 +175,12 @@ section p {
     font-size: 1.2rem;
     color: #222;
     line-height: 1.6;
-    margin-bottom: 0rem; /* Adjusted spacing below h3 */
-    text-align: left;
-    word-wrap: break-word;
     white-space: normal;
-    max-width: 800px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    transform: translateX(10px); /* Moves h3 10 pixels to the right */
 }
 
 .research-project h4 {
@@ -187,11 +188,13 @@ section p {
     color: #222;
     line-height: 1.6;
     text-align: left;
+    margin-left: auto;
+    margin-right: auto;
     word-wrap: break-word;
     white-space: normal;
     width: 900px;
-    margin: 0 auto;
     margin-top: 2rem; /* Adjusted spacing above h4 */
+    transform: translateX(-10px); /* Moves h4 10 pixels to the left */
 }
 
 .research-project p {
@@ -201,9 +204,12 @@ section p {
     width: 800px;
     margin: 0 auto;
     text-align: left;
+    margin-left: auto;
+    margin-right: auto;
     text-indent: 0.2in; /* Optional: Indent the first line of each paragraph */
     margin-top: 1rem; /* Adjusted spacing above p */
     margin-bottom: 0.5rem; /* Adjusted spacing below p */
+    transform: translateX(-10px); /* Moves p 10 pixels to the left */
 }
 
 /* Research Page Slideshow Enhancements */
@@ -216,6 +222,7 @@ section p {
     overflow: hidden;
     display: flex;
     justify-content: center;
+    transform: translateX(-10px); /* Moves slideshow 10 pixels to the left */
   }
   
   /* Slide styling for Research Page */
@@ -267,7 +274,7 @@ section p {
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateY(-50%);
+    transform: translateY(-500%);
     font-size: 1.2rem;
     color: #fff;
     line-height: 1.4;
