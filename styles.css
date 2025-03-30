@@ -117,6 +117,9 @@ section p {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .research-page section {
@@ -129,17 +132,19 @@ section p {
     color: #222;
     margin-top: -15px; /* Adjust this value as needed */
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 /* First Section Paragraphs */
 .research-page section:first-of-type p {
     text-align: left;
-    max-width: 800px;
+    width: 800px;
+    margin: 0 auto;
     font-size: 1.2rem;
     color: #555;
     line-height: 1.6; /* Increased for readability */
     margin-bottom: 1rem; /* Adjusted spacing between paragraphs */
-    text-indent: 0.4in; /* Optional: Indent the first line of each paragraph */
+    text-indent: 0.2in; /* Optional: Indent the first line of each paragraph */
 }
 
 /* Adjust spacing for the first and second sections */
@@ -148,10 +153,10 @@ section p {
 }
 
 .research-page section:nth-of-type(2) {
-    margin-top: -3rem; /* Add space above the second section */
+    margin-top: -4rem; /* Add space above the second section */
 }
 
-/* Research Container */
+/* Second Section Paragraphs */
 .research {
     padding: 1.5rem;
     text-align: left;
@@ -181,26 +186,24 @@ section p {
     font-size: 1.2rem;
     color: #222;
     line-height: 1.6;
-    margin-top: 3rem; /* Adjusted spacing above h4 */
-    margin-bottom: 1rem; /* Optional: Add spacing below h4 */
     text-align: left;
     word-wrap: break-word;
     white-space: normal;
-    max-width: 900px;
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 2rem; /* Adjusted spacing above h4 */
 }
 
 .research-project p {
     font-size: 1.2rem;
     color: #222;
     line-height: 1.6;
-    margin-top: 0rem; /* Adjusted spacing above h4 */
-    margin-bottom: 0.5rem; /* Optional: Add spacing below h4 */
-    margin-left: 0; /* Removes any left margin */
+    width: 800px;
+    margin: 0 auto;
     text-align: left;
-    word-wrap: break-word;
-    white-space: normal;
-    max-width: 800px;
-    text-indent: 0.4in; /* Optional: Indent the first line of each paragraph */
+    text-indent: 0.2in; /* Optional: Indent the first line of each paragraph */
+    margin-top: 1rem; /* Adjusted spacing above p */
+    margin-bottom: 0.5rem; /* Adjusted spacing below p */
 }
 
 /* Research Page Slideshow Enhancements */
@@ -211,6 +214,8 @@ section p {
     height: auto; /* Allow height to adjust based on content */
     margin: 0 auto;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
   }
   
   /* Slide styling for Research Page */
@@ -806,4 +811,3 @@ footer {
         font-size: 1rem;
     }
 }
-
