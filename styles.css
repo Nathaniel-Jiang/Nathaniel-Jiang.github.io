@@ -219,7 +219,7 @@ section p {
     max-width: 600px; /* Set a maximum width */
     height: 550px; /* Set a fixed height */
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 0rem;
     display: flex;
     justify-content: center;
     transform: translateX(-10px);
