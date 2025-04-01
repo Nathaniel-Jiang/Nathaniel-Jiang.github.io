@@ -133,11 +133,12 @@ section p {
     margin-top: -15px; /* Adjust this value as needed */
     margin-bottom: 1.5rem;
     text-align: center;
+    transform: translateX(30px); /* Moves p 10 pixels to the right */
 }
 
 /* First Section Paragraphs */
 .research-page section:first-of-type p {
-    text-align: left;
+    text-align: justify;
     width: 800px;
     margin: 0 auto;
     font-size: 1.2rem;
@@ -145,6 +146,7 @@ section p {
     line-height: 1.6; /* Increased for readability */
     margin-bottom: 1rem; /* Adjusted spacing between paragraphs */
     text-indent: 0.2in; /* Optional: Indent the first line of each paragraph */
+    transform: translateX(30px); /* Moves p 10 pixels to the right */
 }
 
 /* Adjust spacing for the first and second sections */
@@ -194,7 +196,7 @@ section p {
     white-space: normal;
     width: 900px;
     margin-bottom: 0.5rem; /* Adjusted spacing below h4 */
-    transform: translateX(-10px); /* Moves h4 10 pixels to the left */
+    transform: translateX(0px); /* Moves h4 10 pixels to the left */
 }
 
 .research-project p {
@@ -203,26 +205,27 @@ section p {
     line-height: 1.6;
     width: 800px;
     margin: 0 auto;
-    text-align: left;
+    text-align: justify;
     margin-left: auto;
     margin-right: auto;
     text-indent: 0.2in; /* Optional: Indent the first line of each paragraph */
     margin-top: 0rem; /* Adjusted spacing above p */
-    margin-bottom: 0.2rem; /* Adjusted spacing below p */
-    transform: translateX(-10px); /* Moves p 10 pixels to the left */
+    margin-bottom: 0rem; /* Adjusted spacing below p */
+    transform: translateX(-20px); /* Moves p 10 pixels to the left */
 }
   
 /* Research Page Slideshow Enhancements */
 .research-page .slideshow-container {
     position: relative; /* Needed for absolute positioning of children */
     width: 100%;
-    max-width: 600px; /* Set a maximum width */
-    height: 550px; /* Set a fixed height */
+    max-width: 800px; /* Set a maximum width */
+    height: 500px; /* Set a fixed height */
     margin: 0 auto;
-    margin-top: 0rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
-    transform: translateX(-10px);
+    transform: translateX(-20px);
+    overflow: hidden; /* Allow absolute elements to extend beyond boundaries */
 }
   
 /* Slide styling for Research Page */
@@ -243,52 +246,15 @@ section p {
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-
-/* Navigation positioning adjustments */
-.research-page .navigation {
-    position: absolute;
-    top: 50%;
+    /* Ensure image takes up full available space */
+    height: 100%;
     width: 100%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 10;
 }
 
-.research-page .slideshow-container:hover .navigation {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Navigation positioning adjustments */
-.research-page .navigation {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 10;
-}
-
-.research-page .slideshow-container:hover .navigation {
-    opacity: 1;
-    visibility: visible;
-}
-  
-/* Navigation Dots - Position at bottom of image */
+/* Navigation Dots - Position at bottom of slideshow */
 .research-page .dot-container {
     position: absolute;
-    bottom: 15px;
+    bottom: 15px; /* Position from bottom of slideshow-container */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -297,24 +263,46 @@ section p {
     padding: 5px 15px;
     border-radius: 15px;
     z-index: 10; /* Ensure dots appear above image */
-  }
+    bottom: 1rem; /* Increased from 15px to 30px */
+    /* other properties remain the same */
+}
   
-  .research-page .dot {
+.research-page .dot {
     width: 15px;
     height: 15px;
     background: #bbb;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
+}
   
-  .research-page .dot.active {
+.research-page .dot.active {
     background: #fff;
-  }
-  
-  /* Image description */
-  .research-page .slide .description {
+}
+
+/* Navigation positioning adjustments */
+.research-page .navigation {
     position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+.research-page .slideshow-container:hover .navigation {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Image description */
+.research-page .slide .description {
+    position: relative;
     top: 50%;
     right: 0;
     transform: translateY(-500%);
@@ -327,30 +315,10 @@ section p {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     z-index: 5;
-  }
+}
   
 /* Navigation buttons */
-.research-page .navigation {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0; /* Start hidden */
-    visibility: hidden; /* Use visibility for better accessibility */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
-    z-index: 10;
-  }
-  
-/* Show navigation on hover */
-.research-page .slideshow-container:hover .navigation {
-    opacity: 1;
-    visibility: visible; /* Make visible on hover */
-  }
-  
-  .research-page .nav-button {
+.research-page .nav-button {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
@@ -359,14 +327,14 @@ section p {
     cursor: pointer;
     border-radius: 5px;
     margin: 0 10px; /* Adjust spacing from edges */
-  }
+}
   
-  .research-page .nav-button:hover {
+.research-page .nav-button:hover {
     background-color: rgba(0, 0, 0, 0.7);
-  }
+}
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 768px) {
     .research-page .slideshow-container {
       max-width: 100%;
     }
@@ -395,8 +363,7 @@ section p {
       font-size: 1.2rem;
       margin: 0 5px;
     }
-  }
-
+}
 /* Publication Section */
 /* Adjust spacing for <h2> and <p> in publications.html */
 body.publications-page main h3 {
