@@ -168,7 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 slide.classList.toggle('active', index === this.currentIndex);
                 this.dots[index].classList.toggle('active', index === this.currentIndex);
             });
-            this.descriptionElement.textContent = this.slidesData[this.currentIndex].desc;
+            
+            // Update description text in the separate description element
+            if (this.descriptionElement) {
+                this.descriptionElement.textContent = this.slidesData[this.currentIndex].desc || '';
+            }
         }
 
         nextSlide() {

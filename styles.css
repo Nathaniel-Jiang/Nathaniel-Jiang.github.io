@@ -254,7 +254,6 @@ section p {
 /* Navigation Dots - Position at bottom of slideshow */
 .research-page .dot-container {
     position: absolute;
-    bottom: 15px; /* Position from bottom of slideshow-container */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -263,7 +262,7 @@ section p {
     padding: 5px 15px;
     border-radius: 15px;
     z-index: 10; /* Ensure dots appear above image */
-    bottom: 1rem; /* Increased from 15px to 30px */
+    bottom: 0.5rem; 
     /* other properties remain the same */
 }
   
@@ -300,20 +299,20 @@ section p {
     visibility: visible;
 }
 
-/* Image description */
-.research-page .slide .description {
+/* Image description - Updated styling for research page */
+.research-page .description {
     position: relative;
-    top: 50%;
-    right: 0;
-    transform: translateY(-500%);
-    font-size: 1.2rem;
-    color: #fff;
+    width: 700px; /* Fixed width regardless of image size */
+    max-width: 100%; /* Ensures it doesn't overflow on smaller screens */
+    margin: 0 auto;
+    margin-top: -20px; /* Space between slideshow and description */
+    font-size: 1.1rem;
+    color: #000;
     line-height: 1.4;
     text-align: left;
     padding: 15px;
-    background: rgba(0, 0, 0, 0.7);
+    background: transparent;
     border-radius: 5px;
-    z-index: 5;
 }
   
 /* Navigation buttons */
@@ -325,11 +324,15 @@ section p {
     font-size: 1.5rem;
     cursor: pointer;
     border-radius: 5px;
-    margin: 0 10px; /* Adjust spacing from edges */
+    user-select: none;
+    transition: 
+        background-color 0.3s ease,
+        transform 0.2s ease;
 }
   
 .research-page .nav-button:hover {
     background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.05); /* Slight scale effect on hover */
 }
   
 /* Responsive adjustments */
@@ -363,6 +366,8 @@ section p {
       margin: 0 5px;
     }
 }
+
+
 /* Publication Section */
 /* Adjust spacing for <h2> and <p> in publications.html */
 body.publications-page main h3 {
@@ -487,7 +492,6 @@ body.photograph-page main {
 /* Navigation Dots */
 .dot-container {
     position: absolute;
-    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -496,6 +500,7 @@ body.photograph-page main {
     padding: 5px 15px;
     border-radius: 15px;
     z-index: 10; /* Ensure dots are above description */
+    bottom: 0.5rem; /* Increased from 15px to 30px */
 }
 
 .dot {
