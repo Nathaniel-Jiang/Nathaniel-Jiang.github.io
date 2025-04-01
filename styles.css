@@ -177,11 +177,11 @@ section p {
     font-size: 1.2rem;
     color: #222;
     line-height: 1.6;
+    text-align: left;
     white-space: normal;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    text-align: left;
     transform: translateX(10px); /* Moves h3 10 pixels to the right */
 }
 
@@ -310,7 +310,6 @@ section p {
     color: #fff;
     line-height: 1.4;
     text-align: left;
-    max-width: 30%;
     padding: 15px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
