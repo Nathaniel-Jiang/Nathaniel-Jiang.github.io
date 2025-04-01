@@ -336,22 +336,6 @@ section p {
     right: 10px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .research-page .nav-button {
-        padding: 8px 12px;
-        font-size: 1.2rem;
-    }
-
-    .research-page .nav-button.left {
-        left: 5px;
-    }
-
-    .research-page .nav-button.right {
-        right: 5px;
-    }
-}
-
 /* Image description - Updated styling for research page */
 .research-page .description {
     position: relative;
