@@ -22,13 +22,6 @@
     <!-- Async loading of full stylesheet with fetchpriority -->
     <link rel="preload" href="styles.css" as="style" fetchpriority="low" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
-
-    <!-- Preconnect to Google Domains with DNS prefetch -->
-    <link rel="preconnect" href="https://drive.google.com" crossorigin>
-    <link rel="dns-prefetch" href="https://drive.google.com">
-
-    <!-- Optimize Google Drive PDF Preview -->
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <!-- Add description meta tag for SEO -->
     <meta name="description" content="Curriculum Vitae of Peng (Nathaniel) Jiang, researcher in air pollutants and air quality">
@@ -40,7 +33,7 @@
             <a href="research.html">RESEARCH</a>
             <a href="publications.html">PUBLICATIONS</a>
             <a href="photograph.html">PHOTOGRAPH</a>
-            <a href="cv.html">CV</a>
+            <a href="cv.html" aria-current="page">CV</a>
             <a href="contact.html">CONTACT</a>
         </nav>
     </header>
@@ -50,20 +43,17 @@
             <h2>Curriculum Vitae</h2>
             <p>
                 You can view my CV directly below or 
-                <a href="https://drive.google.com/file/d/1HdjxAhrOhAdTAVQCcO33e9IUFcIYoZhB/view?usp=share_link" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
+                <a href="cv/Peng Jiang_CV.pdf" 
+                   download
                    aria-label="Download CV PDF">download it here</a>.
             </p>
             <div class="cv-iframe-container">
-                <!-- Add loading="lazy" and implement a lightweight placeholder -->
+                <!-- Using local PDF file instead of Google Drive -->
                 <iframe 
-                    src="https://drive.google.com/file/d/1HdjxAhrOhAdTAVQCcO33e9IUFcIYoZhB/preview" 
+                    src="cv/Peng Jiang_CV.pdf" 
                     title="Nathaniel Jiang's Curriculum Vitae" 
                     aria-label="CV Embedded View"
                     loading="lazy"
-                    sandbox="allow-scripts allow-same-origin"
-                    importance="low"
                 ></iframe>
             </div>
         </section>
@@ -74,6 +64,6 @@
     </footer>
 
     <!-- Defer script loading with modern attributes -->
-    <script src="script.js" defer async></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
