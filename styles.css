@@ -300,8 +300,7 @@ section p {
     visibility: visible;
 }
 
-/* Remove this duplicate section entirely */
-/* Navigation buttons */
+/* Navigation buttons for research page - consolidated styles */
 .research-page .nav-button {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
@@ -314,11 +313,13 @@ section p {
     transition: 
         background-color 0.3s ease,
         transform 0.2s ease;
+    position: absolute; /* This is key for positioning */
+    pointer-events: auto; /* Make buttons clickable */
 }
-  
+
 .research-page .nav-button:hover {
     background-color: rgba(0, 0, 0, 0.7);
-    transform: scale(1.05); /* Slight scale effect on hover */
+    transform: scale(1.05);
 }
 
 .research-page .nav-button:active {
