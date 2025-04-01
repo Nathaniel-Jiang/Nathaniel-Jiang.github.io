@@ -279,7 +279,7 @@ section p {
     background: #fff;
 }
 
-/* Navigation positioning adjustments */
+/* Navigation positioning adjustments for research page */
 .research-page .navigation {
     position: absolute;
     top: 50%;
@@ -292,11 +292,64 @@ section p {
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 10;
+    left: 0;
+    right: 0;
 }
 
 .research-page .slideshow-container:hover .navigation {
     opacity: 1;
     visibility: visible;
+}
+
+/* Navigation buttons for research page */
+.research-page .nav-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    user-select: none;
+    transition: 
+        background-color 0.3s ease,
+        transform 0.2s ease;
+    position: absolute; /* This is key for positioning */
+}
+
+.research-page .nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+}
+
+.research-page .nav-button:active {
+    transform: scale(0.95);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Position buttons at edges */
+.research-page .nav-button.left {
+    left: 10px;
+}
+
+.research-page .nav-button.right {
+    right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .research-page .nav-button {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+    }
+
+    .research-page .nav-button.left {
+        left: 5px;
+    }
+
+    .research-page .nav-button.right {
+        right: 5px;
+    }
 }
 
 /* Image description - Updated styling for research page */
