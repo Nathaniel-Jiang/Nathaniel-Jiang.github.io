@@ -6,12 +6,14 @@
     <meta name="description" content="Portfolio of Peng (Nathaniel) Jiang, a PhD student in Atmospheric Sciences, specializing in aerosol science and air quality research.">
     <meta name="author" content="Peng (Nathaniel) Jiang">
     <title>Nathaniel Jiang - About Me</title>
+    
+    <!-- Stylesheet reference -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="about-page">
     <header>
         <nav>
-            <a href="index.html">ABOUT ME</a>
+            <a href="index.html" aria-current="page">ABOUT ME</a>
             <a href="research.html">RESEARCH</a>
             <a href="publications.html">PUBLICATIONS</a>
             <a href="photograph.html">PHOTOGRAPH</a>
@@ -22,16 +24,75 @@
 
     <main>
         <section class="hero">
-            <h1>Hi there — I’m Peng (Nathaniel) Jiang</h1>
+            <h1>Welcome — I'm Peng (Nathaniel) Jiang</h1>
             <h3>PhD Student in Atmospheric Sciences at University of Washington</h3>
-            <p>I’m a researcher with over four years of experience studying the formation and evolution of air pollutants (gases and aerosols) and their impact on air quality and human health. I hold a master’s degree in Power Engineering & Engineering Thermal Physics from Wuhan University of Technology (2022), where I worked under Prof. Yu Wang. Following that, I served as a research assistant at Hong Kong Polytechnic University under Dr. Ruoyu You. Now, I’m pursuing my PhD to deepen my expertise in aerosol science and air quality at the University of Washington.</p>
         </section>
+        
+        <div class="about-container">
+            <div class="profile-section">
+                <img src="images/profile.jpg" alt="Peng (Nathaniel) Jiang" class="profile-image">
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> <a href="mailto:kousiec@icloud.com">kousiec@icloud.com</a></p>
+                <p><strong>Location:</strong> Seattle, Washington</p>
+                <p><a href="https://drive.google.com/file/d/1HdjxAhrOhAdTAVQCcO33e9IUFcIYoZhB/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="cv-button">Download CV</a></p>
+            </div>
+            
+            <div class="bio-section">
+                <h2>About Me</h2>
+                <p>I'm a researcher with over four years of experience studying the formation and evolution of air pollutants (gases and aerosols) and their impact on air quality and human health.</p>
+                
+                <p>My research journey began at Wuhan University of Technology, where I earned my master's degree in Power Engineering & Engineering Thermal Physics (2022) under the guidance of Prof. Yu Wang. During this time, I focused on experimental and kinetic studies of aromatic formation in counterflow diffusion flames, developing methods to measure polycyclic aromatic hydrocarbons using gas chromatography-mass spectrometry.</p>
+                
+                <p>Following my master's, I served as a research assistant at Hong Kong Polytechnic University under Dr. Ruoyu You, where I studied the transmission of airborne pollutants in commercial aircraft. This experience deepened my understanding of the complex relationship between air quality and human health.</p>
+                
+                <p>Currently, I'm pursuing my PhD at the University of Washington to further my expertise in aerosol science and air quality. My research interests include:</p>
+                <ul>
+                    <li>Formation and evolution of particulate matter</li>
+                    <li>Inorganic and organic aerosols</li>
+                    <li>Volatile organic compounds</li>
+                    <li>Air quality impacts on public health</li>
+                </ul>
+                
+                <p>Through my research, I aim to contribute to the development of strategies that mitigate the adverse effects of air pollution on human health and the environment.</p>
+            </div>
+            
+            <div class="skills-section">
+                <h2>Research Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>Experimental Techniques</h4>
+                        <ul>
+                            <li>Gas Chromatography-Mass Spectrometry (GC-MS)</li>
+                            <li>Tunable Diode Laser Absorption Spectroscopy</li>
+                            <li>Laser Induced Incandescence</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Simulation & Analysis</h4>
+                        <ul>
+                            <li>ANSYS Chemkin Package</li>
+                            <li>Kinetic Pathway Analysis</li>
+                            <li>Computational Fluid Dynamics</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Research Areas</h4>
+                        <ul>
+                            <li>Aerosol Science</li>
+                            <li>Air Quality Monitoring</li>
+                            <li>Combustion Chemistry</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>© Peng (Nathaniel) Jiang, March 2025. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Defer script loading -->
+    <script src="script.js" defer></script>
 </body>
 </html>

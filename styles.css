@@ -109,6 +109,145 @@ section p {
     margin: 0 auto;
 }
 
+
+/* About me Section */
+/* Critical header and navigation styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ADD8E6;
+    padding: 15px 20px;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav a {
+    color: #000;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+
+/* About page styles */
+main {
+    margin-top: 80px;
+}
+
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.profile-section {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.bio-section {
+    flex: 2;
+    min-width: 400px;
+    padding: 20px;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills-section {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skill-card {
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Daily life photos section */
+.daily-photos-section {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.photo-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.photo-caption {
+    padding: 10px;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.photo-link {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+
 /* Research Section */
 /* Research Page Specifics */
 .research-page main {
