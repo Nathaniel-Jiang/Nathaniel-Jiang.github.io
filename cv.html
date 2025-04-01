@@ -19,15 +19,19 @@
         .cv-iframe-container iframe{width:80%;max-width:1200px;height:80vh;border:none}
     </style>
 
-    <!-- Async loading of full stylesheet -->
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Async loading of full stylesheet with fetchpriority -->
+    <link rel="preload" href="styles.css" as="style" fetchpriority="low" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
-    <!-- Preconnect to Google Domains -->
+    <!-- Preconnect to Google Domains with DNS prefetch -->
     <link rel="preconnect" href="https://drive.google.com" crossorigin>
+    <link rel="dns-prefetch" href="https://drive.google.com">
 
     <!-- Optimize Google Drive PDF Preview -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Add description meta tag for SEO -->
+    <meta name="description" content="Curriculum Vitae of Peng (Nathaniel) Jiang, researcher in air pollutants and air quality">
 </head>
 <body class="cv-page">
     <header>
@@ -48,15 +52,18 @@
                 You can view my CV directly below or 
                 <a href="https://drive.google.com/file/d/1HdjxAhrOhAdTAVQCcO33e9IUFcIYoZhB/view?usp=share_link" 
                    target="_blank" 
-                   rel="noopener noreferrer">download it here</a>.
+                   rel="noopener noreferrer"
+                   aria-label="Download CV PDF">download it here</a>.
             </p>
             <div class="cv-iframe-container">
+                <!-- Add loading="lazy" and implement a lightweight placeholder -->
                 <iframe 
                     src="https://drive.google.com/file/d/1HdjxAhrOhAdTAVQCcO33e9IUFcIYoZhB/preview" 
                     title="Nathaniel Jiang's Curriculum Vitae" 
                     aria-label="CV Embedded View"
                     loading="lazy"
                     sandbox="allow-scripts allow-same-origin"
+                    importance="low"
                 ></iframe>
             </div>
         </section>
@@ -66,7 +73,7 @@
         <p>© Peng (Nathaniel) Jiang, March 2025. All rights reserved.</p>
     </footer>
 
-    <!-- Defer script loading -->
-    <script src="script.js" defer></script>
+    <!-- Defer script loading with modern attributes -->
+    <script src="script.js" defer async></script>
 </body>
 </html>
