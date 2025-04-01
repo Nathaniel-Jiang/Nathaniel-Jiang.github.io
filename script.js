@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.showSlide();
         }
 
+        // In the renderSlides method of the Slideshow class
         renderSlides() {
             // Use document fragment for more efficient DOM manipulation
             const fragment = document.createDocumentFragment();

@@ -294,6 +294,7 @@ section p {
     z-index: 10;
     left: 0;
     right: 0;
+    pointer-events: none; /* Allow clicks to pass through the container */
 }
 
 .research-page .slideshow-container:hover .navigation {
@@ -301,7 +302,7 @@ section p {
     visibility: visible;
 }
 
-/* Navigation buttons for research page */
+/* Remove the duplicate navigation button styles and consolidate them */
 .research-page .nav-button {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
@@ -315,6 +316,7 @@ section p {
         background-color 0.3s ease,
         transform 0.2s ease;
     position: absolute; /* This is key for positioning */
+    pointer-events: auto; /* Make buttons clickable */
 }
 
 .research-page .nav-button:hover {
