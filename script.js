@@ -67,9 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const navigation = document.createElement('div');
             navigation.className = 'navigation';
+            
+            // Update the navigation buttons to ensure they're properly positioned
+            // Add specific classes for research page if needed
+            const isResearchPage = document.body.classList.contains('research-page');
+            const buttonClass = isResearchPage ? 'nav-button research-nav' : 'nav-button';
+            
             navigation.innerHTML = `
-                <button class="nav-button left" aria-label="Previous Slide">❮</button>
-                <button class="nav-button right" aria-label="Next Slide">❯</button>
+                <button class="${buttonClass} left" aria-label="Previous Slide">❮</button>
+                <button class="${buttonClass} right" aria-label="Next Slide">❯</button>
             `;
 
             fragment.appendChild(slidesContainer);

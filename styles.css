@@ -246,9 +246,7 @@ section p {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* Ensure image takes up full available space */
-    height: 100%;
-    width: 100%;
+    /* Remove duplicate properties below */
 }
 
 /* Navigation Dots - Position at bottom of slideshow */
@@ -302,7 +300,8 @@ section p {
     visibility: visible;
 }
 
-/* Remove the duplicate navigation button styles and consolidate them */
+/* Remove this duplicate section entirely */
+/* Navigation buttons */
 .research-page .nav-button {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
@@ -315,13 +314,11 @@ section p {
     transition: 
         background-color 0.3s ease,
         transform 0.2s ease;
-    position: absolute; /* This is key for positioning */
-    pointer-events: auto; /* Make buttons clickable */
 }
-
+  
 .research-page .nav-button:hover {
     background-color: rgba(0, 0, 0, 0.7);
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slight scale effect on hover */
 }
 
 .research-page .nav-button:active {
@@ -437,9 +434,9 @@ body.publications-page main h4 {
     text-align: left;
     text-shadow: none;
     margin-left: 40px; /* Fixed margin from the left for consistency */
-    word-wrap: break-word; /* 强制单词内换行 */
-    white-space: normal;   /* 允许换行，默认值，可明确指定 */
-    max-width: 800px;      /* 限制标题宽度，与正文接近 */
+    word-wrap: break-word; /* Update these Chinese comments to English */
+    white-space: normal;   /* Allow line breaks, default value */
+    max-width: 800px;      /* Limit title width, similar to body text */
 }
 
 /* Publication Year Alignment */
