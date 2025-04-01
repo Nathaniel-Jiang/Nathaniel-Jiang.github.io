@@ -869,7 +869,7 @@ body.cv-page main section {
 .cv-iframe-container {
     display: flex;
     justify-content: center;
-    margin-top: 40px; /* Add spacing above the PDF */
+    margin-top: 30px; /* Add spacing above the PDF */
     width: 100%; /* Ensure the container takes the full width of the page */
     max-width: 1400px; /* Set a maximum width for larger screens */
     margin-left: auto; /* Center the container horizontally */
@@ -879,8 +879,25 @@ body.cv-page main section {
 .cv-iframe-container iframe {
     width: 80%; /* Adjust the width to make it wider (e.g., 80% of the container) */
     max-width: 1200px; /* Set a maximum width for larger screens */
-    height: 80vh; /* Set the height to 80% of the viewport height */
+    height: 70vh; /* Set the height to 80% of the viewport height */
     border: none; /* Remove the border */
+}
+
+/* Add responsive design for CV page */
+@media (max-width: 768px) {
+    body.cv-page main h2 {
+        margin-top: 70px !important; /* Reduce top margin on mobile */
+        font-size: 2rem; /* Smaller font size on mobile */
+    }
+    
+    .cv-iframe-container {
+        margin-top: 20px; /* Less spacing on mobile */
+    }
+    
+    .cv-iframe-container iframe {
+        width: 95%; /* Wider on mobile */
+        height: 70vh; /* Slightly shorter on mobile */
+    }
 }
 
 
