@@ -170,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         }
 
+        // In the showSlide method of the Slideshow class
         showSlide() {
             this.slides.forEach((slide, index) => {
                 slide.classList.toggle('active', index === this.currentIndex);
@@ -178,7 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Update description text in the separate description element
             if (this.descriptionElement) {
-                this.descriptionElement.textContent = this.slidesData[this.currentIndex].desc || '';
+                // Change from textContent to innerHTML to render HTML tags
+                this.descriptionElement.innerHTML = this.slidesData[this.currentIndex].desc || '';
             }
         }
 
