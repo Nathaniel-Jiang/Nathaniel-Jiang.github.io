@@ -943,7 +943,7 @@ header nav a {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    gap: 150px;
+    gap: 50px;
 }
 
 .contact-container a {
@@ -956,9 +956,8 @@ header nav a {
 }
 
 .contact-container img {
-    height: 180px;
+    height: 150px;
     width: auto;
-    max-width: 180px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: block;
 }
