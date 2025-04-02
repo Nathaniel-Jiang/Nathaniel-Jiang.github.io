@@ -224,3 +224,28 @@ document.addEventListener('DOMContentLoaded', () => {
     highlightCurrentPage();
     initSlideshows();
 });
+
+// Mobile navigation enhancement
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if we're on a mobile device
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Add touch-friendly enhancements
+        const navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(link => {
+            // Add a slightly larger touch target area
+            link.style.padding = '8px 12px';
+            
+            // Add active state for touch feedback
+            link.addEventListener('touchstart', function() {
+                this.classList.add('touch-active');
+            });
+            
+            link.addEventListener('touchend', function() {
+                this.classList.remove('touch-active');
+            });
+        });
+    }
+});
